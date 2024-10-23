@@ -19,6 +19,7 @@
         {
           environment.systemPackages = with pkgs; [
             eza
+            fish
             git
             iterm2
             jujutsu
