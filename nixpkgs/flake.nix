@@ -18,6 +18,7 @@
         { pkgs, config, lib, ... }:
         {
           environment.systemPackages = with pkgs; [
+            eza
             git
             iterm2
             jujutsu
