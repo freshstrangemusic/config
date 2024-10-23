@@ -1,0 +1,10 @@
+[user]
+	name = Beth Rennie
+	email = beth@brennie.ca
+
+[diff]
+	indentHeuristic = true
+	compactionHeuristic = true
+
+[core]
+	excludesfile = ~/.gitignore-global

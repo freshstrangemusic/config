@@ -1,0 +1,11 @@
+# vim backup files
+*~
+
+# vim swap files
+.*swp
+
+# macOS directory information
+.DS_Store
+
+# Windows directory information
+thumbs.db
