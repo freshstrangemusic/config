@@ -1,0 +1,8 @@
+[ui]
+default-command = "log"
+editor = "vim"
+paginate = "never"
+
+[user]
+name = "Beth Rennie"
+email = "beth@brennie.ca"
