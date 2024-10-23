@@ -2,6 +2,7 @@
 default-command = "log"
 editor = "vim"
 paginate = "never"
+diff-editor = ":builtin"
 
 [user]
 name = "Beth Rennie"
