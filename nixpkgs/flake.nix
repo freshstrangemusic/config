@@ -19,6 +19,7 @@
         {
           environment.systemPackages = with pkgs; [
             git
+            iterm2
             jujutsu
             just
             stow
@@ -40,6 +41,29 @@
           system.stateVersion = 5;
 
           nixpkgs.hostPlatform = "aarch64-darwin";
+
+          # Replace the default /Applications/Nix Apps symlink with a directory
+          # containing copies of the installed apps.
+          #
+          # This allows them to show up in Spotlight and Alfred.
+          system.activationScripts.applications.text = lib.mkForce(''
+          __NIX_APPS_DIR="/Applications/Nix Apps"
+          echo "Setting up my $__NIX_APPS_DIR..." >&2
+
+          if [ -L "$__NIX_APPS_DIR" ]; then
+            echo "Unlinking $__NIX_APPS_DIR" >&2
+            unlink -- "$__NIX_APPS_DIR"
+          elif [ -d "$__NIX_APPS_DIR" ]; then
+            echo "Removing existing Nix Apps directory" 2>&1
+            rm -rf -- "$__NIX_APPS_DIR";
+          fi
+
+          mkdir "/Applications/Nix Apps"
+          
+          for APP in $(find "${config.system.build.applications}/Applications" -maxdepth 1 -type l); do
+            cp -Lr "$APP" "/Applications/Nix Apps"
+          done
+          '');
         };
     in
     {
