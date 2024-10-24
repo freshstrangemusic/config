@@ -1,3 +1,6 @@
+default:
+    @just --list
+
 install-dotfiles:
     stow -t ~ -d dotfiles/layers/base .
     [[ "{{ os() }}" = "macos" ]] && stow -t ~ -d dotfiles/layers/macOS .
