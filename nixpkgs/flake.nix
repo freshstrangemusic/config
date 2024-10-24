@@ -26,6 +26,7 @@
             jujutsu
             just
             lazyjj
+            poetry
             stow
             vim
           ];
