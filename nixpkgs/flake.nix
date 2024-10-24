@@ -27,6 +27,7 @@
             just
             lazyjj
             poetry
+            python311Packages.pipx
             stow
             vim
           ];

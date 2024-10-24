@@ -1,5 +1,8 @@
 install-dotfiles:
-    stow -t ~ -d dotfiles .
+    stow -t ~ -d dotfiles/layers/base .
+
+uninstall-dotfiles:
+    stow -t ~ -d dotfiles/layers/base -D .
 
 darwin-rebuild:
     darwin-rebuild switch --flake ./nixpkgs#vixen
