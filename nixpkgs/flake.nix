@@ -18,6 +18,7 @@
         { pkgs, config, lib, ... }:
         {
           environment.systemPackages = with pkgs; [
+            alacritty
             any-nix-shell
             eza
             fish
