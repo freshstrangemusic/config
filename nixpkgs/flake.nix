@@ -30,6 +30,7 @@
             lazyjj
             poetry
             python311Packages.pipx
+            ripgrep
             stow
             vim
           ];
