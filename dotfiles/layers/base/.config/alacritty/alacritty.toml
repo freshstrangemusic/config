@@ -1,1 +1,5 @@
 import = ["~/.config/alacritty/tokyo-night-storm.toml"]
+
+[font]
+normal = { family = "Fira Code", style = "Regular" }
+size = 16
