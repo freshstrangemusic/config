@@ -22,6 +22,7 @@
             any-nix-shell
             eza
             fish
+            fira-code
             git
             iterm2
             jujutsu
@@ -32,6 +33,8 @@
             stow
             vim
           ];
+
+          fonts.packages = with pkgs; [ pkgs.fira-code ];
 
           # Auto upgrade nix package and the daemon service.
           services.nix-daemon.enable = true;
