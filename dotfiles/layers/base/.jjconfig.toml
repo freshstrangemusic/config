@@ -4,6 +4,9 @@ editor = "vim"
 paginate = "never"
 diff-editor = ":builtin"
 
+[ui.diff]
+format = "git"
+
 [user]
 name = "Beth Rennie"
 email = "beth@brennie.ca"
