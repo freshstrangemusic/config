@@ -25,10 +25,12 @@ My dotfiles, organized into layers that apply on top of each other:
 
 - **base**: the base layer, which is common to all systems;
 - **macOS**: a layer that contains macOS-specific configuration (and symlinks from macOS-specific
-  locations to Linux / XDG Home Specification locations).
+  locations to Linux / XDG Home Specification locations);
+- **windows**: a layer that contains Windows-specific configuration (this layer is not
+  automatically linked).
 
 The dotfiles are managed with [GNU stow][stow].
- 
+
 ### nixpkgs/
 
 My nix configuration.
