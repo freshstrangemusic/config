@@ -1,0 +1,17 @@
+blocks:
+  - permission
+  - user
+  - size
+  - date
+  - name
+
+icons:
+  when: never
+
+ignore-globs:
+  - NTUSER.DAT
+  - NTUSER.DAT{*}*
+  - ntuser.data.LOG*
+
+sorting:
+  dir-grouping: first
