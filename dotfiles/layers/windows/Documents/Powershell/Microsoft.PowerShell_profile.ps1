@@ -64,3 +64,32 @@ function prompt() {
 }
 
 Set-Alias -Name ls -Value lsd
+
+Set-PSReadLineOption -EditMode Emacs -BellStyle None
+Set-PSReadLineKeyHandler -Key Tab -Function MenuComplete
+Set-PSReadLineKeyHandler -Chord Ctrl+w -Function BackwardDeleteWord
+Set-PSReadlineKeyHandler -Key Alt+e `
+                         -BriefDescription EditCommand `
+                         -LongDescription "Edit current command in editor" `
+                         -ScriptBlock {
+    $line = $null
+    $cursor = $null
+
+    [Microsoft.PowerShell.PSConsoleReadLine]::GetBufferState([ref] $line, [ref] $cursor)
+
+    $temp = New-TemporaryFile
+    Write-Output $line > $temp
+
+    Start-Process -Wait -NoNewWindow $env:EDITOR -ArgumentList $temp
+    $status = $global:?
+
+    if (($status -eq $null) -or ($status -eq 0) -or ($status -eq $true)) {
+        $newLine = Get-Content $temp
+
+        [Microsoft.PowerShell.PSConsoleReadLine]::Replace(0, $line.Length, $newLine)
+    }
+
+    Remove-Item $temp.Name
+}
+
+$env:EDITOR = "vim"
