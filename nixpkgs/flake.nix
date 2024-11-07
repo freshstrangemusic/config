@@ -78,9 +78,7 @@
 
             mkdir "/Applications/Nix Apps"
 
-            for APP in $(find "${config.system.build.applications}/Applications" -maxdepth 1 -type l); do
-              cp -Lr "$APP" "/Applications/Nix Apps"
-            done
+            find "${config.system.build.applications}/Applications" -maxdepth 1 -type l -exec cp -Lr {} "/Applications/Nix Apps" \;
           '');
         };
     in
