@@ -120,3 +120,5 @@ Register-ArgumentCompleter -CommandName Set-Mozconfig -ParameterName mozconfig -
         ForEach-Object { $_.Name } | `
         Where-Object { $_ -like "$wordToComplete*" }
 }
+
+$env:GIT_CINNABAR_CHECK = "no-version-check"
