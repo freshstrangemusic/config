@@ -28,6 +28,13 @@ function prompt() {
     $lastCmdSuccess = $global:?
     $statusCode = $global:LASTEXITCODE
 
+    if ($null -ne $env:MOZCONFIG) {
+        $envName = Split-Path -Leaf $env:MOZCONFIG
+        Write-Host -NoNewLine "("
+        Write-Host -NoNewline -ForegroundColor red "mozconfig:$envName"
+        Write-Host -NoNewline ") "
+    }
+
     $identity = [Security.Principal.WindowsIdentity]::GetCurrent()
     $principal = [Security.Principal.WindowsPrincipal] $identity
     $adminRole = [Security.Principal.WindowsBuiltInRole]::Administrator
@@ -93,3 +100,23 @@ Set-PSReadlineKeyHandler -Key Alt+e `
 }
 
 $env:EDITOR = "vim"
+
+Function Set-Mozconfig {
+    param($mozconfig)
+
+    if ($null -eq $mozconfig) {
+        $mozconfigPath = $null
+    } else {
+        $mozconfigPath = Resolve-Path ( Join-Path ~\.mozbuild\mozconfigs $mozconfig )
+    }
+
+    $env:MOZCONFIG = $mozconfigPath
+}
+
+Register-ArgumentCompleter -CommandName Set-Mozconfig -ParameterName mozconfig -ScriptBlock {
+    param($commandName, $parameterName, $wordToComplete, $commandAst, $fakeBoundParameters)
+
+    Get-ChildItem ~\.mozbuild\mozconfigs | `
+        ForEach-Object { $_.Name } | `
+        Where-Object { $_ -like "$wordToComplete*" }
+}
