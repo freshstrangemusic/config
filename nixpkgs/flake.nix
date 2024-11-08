@@ -29,6 +29,7 @@
             alacritty
             any-nix-shell
             eza
+            fastmod
             fish
             fira-code
             git
