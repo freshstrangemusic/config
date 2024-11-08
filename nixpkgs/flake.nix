@@ -32,6 +32,7 @@
             fish
             fira-code
             git
+            gnused
             iterm2
             jujutsu
             just
