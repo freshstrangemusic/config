@@ -1,3 +1,5 @@
+set shell := ["/bin/bash", "-c"]
+
 hostname := `hostname`
 
 default:
@@ -5,10 +7,10 @@ default:
 
 install-dotfiles:
     stow -t ~ -d dotfiles/layers/base .
-    [[ "{{ os() }}" = "macos" ]] && stow -t ~ -d dotfiles/layers/macOS .
+    [[ "{{ os() }}" = "macos" ]] && stow -t ~ -d dotfiles/layers/macOS . || exit 0
 
 uninstall-dotfiles:
-    [[ "{{ os() }}" = "macos" ]] && stow -t ~ -d dotfiles/layers/macOS -D .
+    [[ "{{ os() }}" = "macos" ]] && stow -t ~ -d dotfiles/layers/macOS -D . || exit 0
     stow -t ~ -d dotfiles/layers/base -D .
 
 darwin-rebuild HOST=hostname:

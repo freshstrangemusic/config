@@ -1,0 +1,13 @@
+call plug#begin('~/.config/nvim/plugins')
+  Plug 'Konfekt/FastFold'
+  Plug 'avm99963/vim-jjdescription'
+  Plug 'folke/tokyonight.nvim'
+  Plug 'haya14busa/incsearch.vim'
+  Plug 'preservim/nerdtree'
+  Plug 'qpkorr/vim-bufkill'
+  Plug 'simnalamburt/vim-mundo'
+  Plug 'tpope/vim-sensible'
+  Plug 'tpope/vim-sleuth'
+  Plug 'vim-airline/vim-airline'
+  Plug 'vim-airline/vim-airline-themes'
+call plug#end()

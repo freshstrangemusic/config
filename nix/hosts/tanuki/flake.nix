@@ -31,8 +31,10 @@
             eza
             jujutsu
             just
+            neovim
             nixfmt-rfc-style
             ripgrep
+            vim
           ];
 
           programs.home-manager.enable = true;
