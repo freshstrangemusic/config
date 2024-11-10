@@ -29,11 +29,15 @@
           home.packages = with pkgs; [
             any-nix-shell
             eza
+            jq
             jujutsu
             just
             neovim
+            poetry
             nixfmt-rfc-style
             ripgrep
+            rustup
+            yarn
             vim
           ];
 
