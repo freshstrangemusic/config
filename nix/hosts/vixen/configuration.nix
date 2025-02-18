@@ -67,4 +67,10 @@ self@{
 
     find "${config.system.build.applications}/Applications" -maxdepth 1 -type l -exec cp -Lr {} "/Applications/Nix Apps" \;
   '');
+
+  users.knownUsers = ["beth"];
+  users.users.beth = {
+    uid = 501;
+    shell = pkgs.fish;
+  };
 }
