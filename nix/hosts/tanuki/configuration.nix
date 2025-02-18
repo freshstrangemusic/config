@@ -20,12 +20,14 @@
     isNormalUser = true;
     extraGroups = [
       "beth"
+      "docker"
       "users"
       "wheel"
     ];
   };
 
   environment.systemPackages = with pkgs; [
+    docker
     git
     jujutsu
     just
@@ -47,6 +49,8 @@
   services.samba.enable = true;
   services.samba.nmbd.enable = true;
   services.samba.openFirewall = true;
+
+  virtualisation.docker.enable = true;
 
   system.stateVersion = "24.11";
 }
