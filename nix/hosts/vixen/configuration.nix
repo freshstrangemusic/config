@@ -17,7 +17,6 @@ self@{
     fish
     git
     gnused
-    iterm2
     jujutsu
     just
     nixfmt-rfc-style
