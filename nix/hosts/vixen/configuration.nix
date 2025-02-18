@@ -20,7 +20,6 @@ self@{
     iterm2
     jujutsu
     just
-    lazyjj
     nixfmt-rfc-style
     poetry
     python311Packages.pipx
