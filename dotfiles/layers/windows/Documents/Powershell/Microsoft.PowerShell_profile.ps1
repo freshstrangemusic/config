@@ -122,3 +122,5 @@ Register-ArgumentCompleter -CommandName Set-Mozconfig -ParameterName mozconfig -
 }
 
 $env:GIT_CINNABAR_CHECK = "no-version-check"
+
+$env:LESS = "FRX"
