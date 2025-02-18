@@ -27,7 +27,8 @@ My dotfiles, organized into layers that apply on top of each other:
 - **macOS**: a layer that contains macOS-specific configuration (and symlinks from macOS-specific
   locations to Linux / XDG Home Specification locations);
 - **windows**: a layer that contains Windows-specific configuration (this layer is not
-  automatically linked).
+  automatically linked);
+- **wsl**: a layer that contains WSL-specific configuration.
 
 The dotfiles are managed with [GNU stow][stow].
 

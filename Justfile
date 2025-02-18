@@ -2,6 +2,7 @@ set shell := ["/bin/bash", "-c"]
 
 hostname := `hostname`
 rebuild_cmd := if os() == "macos" { "darwin-rebuild" } else { "nixos-rebuild" }
+is_wsl := "-n $WSL_DISTRO_NAME"
 
 default:
     @just --list
@@ -9,8 +10,10 @@ default:
 install-dotfiles:
     stow -t ~ -d dotfiles/layers/base .
     if [[ "{{ os() }}" = "macos" ]]; then stow -t ~ -d dotfiles/layers/macOS .; fi
+    if [[ {{ is_wsl }} ]]; then stow -t ~ -d dotfiles/layers/wsl .; fi
 
 uninstall-dotfiles:
+    if [[ {{ is_wsl }} ]]; then stow -t ~ -d dotfiles/layers/wsl -D .; fi
     if [[ "{{ os() }}" = "macos" ]]; then stow -t ~ -d dotfiles/layers/macOS -D .; fi
     stow -t ~ -d dotfiles/layers/base -D .
 

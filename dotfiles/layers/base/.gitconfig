@@ -8,3 +8,6 @@
 
 [core]
 	excludesfile = ~/.gitignore-global
+
+[include]
+	path = ~/.gitconfig.local
