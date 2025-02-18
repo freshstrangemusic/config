@@ -16,5 +16,10 @@
       darwinConfigurations."vixen" = nix-darwin.lib.darwinSystem {
         modules = [ ./hosts/vixen/configuration.nix ];
       };
+
+      nixosConfigurations."tanuki" = nixpkgs.lib.nixosSystem {
+        system = "x86_64-linux";
+        modules = [ ./hosts/tanuki/configuration.nix ];
+      };
     };
 }
