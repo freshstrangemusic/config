@@ -6,6 +6,7 @@ default-command = "log"
 editor = "vim"
 paginate = "never"
 diff-editor = ":builtin"
+conflict-marker-style = "snapshot"
 
 [ui.diff]
 format = "git"
