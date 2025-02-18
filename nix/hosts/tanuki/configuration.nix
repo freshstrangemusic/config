@@ -30,6 +30,7 @@
     jujutsu
     just
     nixfmt-rfc-style
+    ripgrep
     stow
     vim
     wget
