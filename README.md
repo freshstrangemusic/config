@@ -31,7 +31,7 @@ My dotfiles, organized into layers that apply on top of each other:
 
 The dotfiles are managed with [GNU stow][stow].
 
-### nixpkgs/
+### nix/
 
 My nix configuration.
 
