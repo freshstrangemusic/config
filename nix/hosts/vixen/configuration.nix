@@ -29,6 +29,8 @@ self@{
 
   fonts.packages = with pkgs; [ pkgs.fira-code ];
 
+  networking.computerName = "vixen";
+
   nix.enable = false;
   nix.package = pkgs.nix;
   nix.settings.experimental-features = "nix-command flakes";
