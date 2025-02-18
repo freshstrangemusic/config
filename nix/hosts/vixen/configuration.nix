@@ -29,8 +29,7 @@ self@{
 
   fonts.packages = with pkgs; [ pkgs.fira-code ];
 
-  # Auto upgrade nix package and the daemon service.
-  services.nix-daemon.enable = true;
+  nix.enable = false;
   nix.package = pkgs.nix;
   nix.settings.experimental-features = "nix-command flakes";
 
