@@ -1,3 +1,6 @@
+[git]
+subprocess = true
+
 [ui]
 default-command = "log"
 editor = "vim"
