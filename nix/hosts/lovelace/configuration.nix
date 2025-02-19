@@ -8,6 +8,9 @@
   imports = [ ./wsl.nix ];
 
   environment.systemPackages = with pkgs; [
+    any-nix-shell
+    eza
+    fish
     git
     jujutsu
     just
@@ -23,6 +26,7 @@
     EDITOR = "vim";
   };
 
+  programs.fish.enable = true;
   programs.nix-ld.enable = true;
 
   networking.hostName = "lovelace";
@@ -38,6 +42,7 @@
       "users"
       "wheel"
     ];
+    shell = pkgs.fish;
   };
 
   system.stateVersion = "24.11";
