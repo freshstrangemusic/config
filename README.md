@@ -16,7 +16,8 @@ tasks:
 
 - **install-dotfiles**: install dotfiles with `stow`
 - **uninstall-dotfiles**: uninstall dotfiles with `stow`
-- **darwin-rebuild**: rebuild the nix environment with `nix-darwin`
+- **rebuild**: rebuild the nix environment (with `darwin-rebuild` on macOS and `nixos-rebuild` on
+  NixOS); the bookmark for the current host will be moved to the latest non-empty commit
 - **nix-flake-update**: update the nix flake
 
 ### dotfiles/

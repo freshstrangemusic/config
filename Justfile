@@ -1,7 +1,7 @@
 set shell := ["/bin/bash", "-c"]
 
 hostname := `hostname`
-rebuild_cmd := if os() == "macos" { "darwin-rebuild" } else { "nixos-rebuild" }
+rebuild_cmd := if os() == "macos" { "darwin-rebuild" } else { "sudo nixos-rebuild" }
 is_wsl := "-n $WSL_DISTRO_NAME"
 
 default:
@@ -17,8 +17,9 @@ uninstall-dotfiles:
     if [[ "{{ os() }}" = "macos" ]]; then stow -t ~ -d dotfiles/layers/macOS -D .; fi
     stow -t ~ -d dotfiles/layers/base -D .
 
-nix-rebuild HOST=hostname:
-    {{ rebuild_cmd }} switch --flake ./nix#{{HOST}}
+rebuild:
+    {{ rebuild_cmd }} switch --flake ./nix#{{ hostname }}
+    jj bookmark m {{ hostname }} --to 'latest(::@ & ~empty())' --allow-backwards
 
 nix-flake-update:
     cd nix && env NIX_CONFIG="access-tokens = github.com=`op item get gh-token-nix --fields password --reveal`" nix flake update
