@@ -39,6 +39,10 @@
   ];
 
   programs.nix-ld.enable = true;
+  programs.vim = {
+    enable = true;
+    defaultEditor = true;
+  };
 
   services.envfs.enable = true;
   services.openssh.enable = true;
