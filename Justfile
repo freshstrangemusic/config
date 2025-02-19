@@ -21,5 +21,8 @@ rebuild:
     {{ rebuild_cmd }} switch --flake ./nix#{{ hostname }}
     jj bookmark m {{ hostname }} --to 'latest(::@ & ~empty())' --allow-backwards
 
+edit-host-configuration:
+    $EDITOR -- ./nix/hosts/{{ hostname }}/configuration.nix
+
 nix-flake-update:
     cd nix && env NIX_CONFIG="access-tokens = github.com=`op item get gh-token-nix --fields password --reveal`" nix flake update

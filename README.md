@@ -19,6 +19,7 @@ tasks:
 - **rebuild**: rebuild the nix environment (with `darwin-rebuild` on macOS and `nixos-rebuild` on
   NixOS); the bookmark for the current host will be moved to the latest non-empty commit
 - **nix-flake-update**: update the nix flake
+- **edit-host-configuration**: open the `configuration.nix` for the current host in `$EDITOR`
 
 ### dotfiles/
 
