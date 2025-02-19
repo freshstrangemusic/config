@@ -22,12 +22,13 @@
     vim
     wget
   ];
-  environment.variables = {
-    EDITOR = "vim";
-  };
 
   programs.fish.enable = true;
   programs.nix-ld.enable = true;
+  programs.vim = {
+    enable = true;
+    defaultEditor = true;
+  };
 
   networking.hostName = "lovelace";
 
