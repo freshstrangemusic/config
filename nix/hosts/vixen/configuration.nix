@@ -4,28 +4,26 @@ self@{
   lib,
   ...
 }:
+let
+  common = (import ../../common.nix) {
+    inherit pkgs;
+  };
+in
 {
   nixpkgs.config.allowUnfree = true;
 
-  environment.systemPackages = with pkgs; [
-    _1password-cli
-    alacritty
-    any-nix-shell
-    eza
-    fastmod
-    fira-code
-    fish
-    git
-    gnused
-    jujutsu
-    just
-    nixfmt-rfc-style
-    poetry
-    python311Packages.pipx
-    ripgrep
-    stow
-    vim
-  ];
+  environment.systemPackages =
+    with pkgs;
+    common.systemPackages
+    ++ [
+      _1password-cli
+      alacritty
+      fastmod
+      fira-code
+      gnused
+      poetry
+      python311Packages.pipx
+    ];
 
   fonts.packages = with pkgs; [ pkgs.fira-code ];
 
@@ -68,7 +66,7 @@ self@{
     find "${config.system.build.applications}/Applications" -maxdepth 1 -type l -exec cp -Lr {} "/Applications/Nix Apps" \;
   '');
 
-  users.knownUsers = ["beth"];
+  users.knownUsers = [ "beth" ];
   users.users.beth = {
     uid = 501;
     shell = pkgs.fish;

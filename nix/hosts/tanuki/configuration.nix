@@ -4,6 +4,11 @@
   pkgs,
   ...
 }:
+let
+  common = (import ../../common.nix) {
+    inherit pkgs;
+  };
+in
 {
   imports = [ ./hardware-configuration.nix ];
 
@@ -28,14 +33,6 @@
 
   environment.systemPackages = with pkgs; [
     docker
-    git
-    jujutsu
-    just
-    nixfmt-rfc-style
-    ripgrep
-    stow
-    vim
-    wget
   ];
 
   programs.nix-ld.enable = true;

@@ -4,24 +4,21 @@
   pkgs,
   ...
 }:
+let
+  common = (import ../../common.nix) {
+    inherit pkgs;
+  };
+in
 {
   imports = [ ./wsl.nix ];
 
-  environment.systemPackages = with pkgs; [
-    any-nix-shell
-    eza
-    fish
-    git
-    jujutsu
-    just
-    nixfmt-rfc-style
-    nodejs_23
-    python313
-    ripgrep
-    stow
-    vim
-    wget
-  ];
+  environment.systemPackages =
+    with pkgs;
+    common.systemPackages
+    ++ [
+      nodejs_23
+      python313
+    ];
 
   programs.fish.enable = true;
   programs.nix-ld.enable = true;
