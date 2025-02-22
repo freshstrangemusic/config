@@ -26,3 +26,6 @@ edit-host-configuration:
 
 nix-flake-update:
     cd nix && env NIX_CONFIG="access-tokens = github.com=`op item get gh-token-nix --fields password --reveal`" nix flake update
+
+fmt:
+    rg --files -g '*.nix' . | xargs nixfmt

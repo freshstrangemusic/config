@@ -1,7 +1,8 @@
 {
   pkgs,
   ...
-}: {
+}:
+{
   systemPackages = with pkgs; [
     any-nix-shell
     eza
