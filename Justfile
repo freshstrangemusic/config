@@ -8,6 +8,8 @@ default:
     @just --list
 
 install-dotfiles:
+    if [[ -f ~/.config/fish/config.fish ]]; then rm -rf -- ~/.config/fish; fi
+    mkdir -p ~/.config/fish/functions
     stow -t ~ -d dotfiles/layers/base .
     if [[ "{{ os() }}" = "macos" ]]; then stow -t ~ -d dotfiles/layers/macOS .; fi
     if [[ {{ is_wsl }} ]]; then stow -t ~ -d dotfiles/layers/wsl .; fi
