@@ -24,6 +24,10 @@
         modules = [ ./hosts/vixen/configuration.nix ];
       };
 
+      darwinConfigurations."kitsune" = nix-darwin.lib.darwinSystem {
+        modules = [ ./hosts/kitsune/configuration.nix ];
+      };
+
       nixosConfigurations."tanuki" = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
         modules = [ ./hosts/tanuki/configuration.nix ];
