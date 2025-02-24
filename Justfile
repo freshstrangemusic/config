@@ -21,7 +21,7 @@ uninstall-dotfiles:
 
 rebuild:
     {{ rebuild_cmd }} switch --flake ./nix#{{ hostname }}
-    jj bookmark m {{ hostname }} --to 'latest(::@ & ~empty())' --allow-backwards
+    jj bookmark m hosts/{{ hostname }} --to 'latest(::@ & ~empty())' --allow-backwards
 
 edit-host-configuration:
     $EDITOR -- ./nix/hosts/{{ hostname }}/configuration.nix
