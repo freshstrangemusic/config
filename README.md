@@ -38,5 +38,19 @@ The dotfiles are managed with [GNU stow][stow].
 
 My nix configuration.
 
+### bootstrap.sh
+
+A script to bootstrap the configuration of a nix environment on a new machine.  To configure a new
+machine with the name `HOSTNAME`, run:
+
+```sh
+curl --proto '=https' \
+     --tlsv1.2 \
+     -sSf \
+     -L \
+     https://raw.githubusercontent.com/freshstrangemusic/config/main/bootstrap.sh | \
+  /bin/bash -- -H HOSTNAME
+```
+
 [just]: https://github.com/casey/just
 [stow]: https://www.gnu.org/software/stow/stow.html
