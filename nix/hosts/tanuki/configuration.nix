@@ -31,9 +31,12 @@ in
     ];
   };
 
-  environment.systemPackages = with pkgs; [
-    docker
-  ];
+  environment.systemPackages =
+    with pkgs;
+    common.systemPackages
+    ++ [
+      docker
+    ];
 
   programs.nix-ld.enable = true;
   programs.vim = {
