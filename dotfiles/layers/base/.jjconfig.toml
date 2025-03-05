@@ -8,7 +8,6 @@ subprocess = true
 [ui]
 default-command = ["s"]
 editor = "vim"
-paginate = "never"
 diff-editor = ":builtin"
 conflict-marker-style = "snapshot"
 
@@ -18,3 +17,8 @@ format = "git"
 [user]
 name = "Beth Rennie"
 email = "beth@brennie.ca"
+
+[[--scope]]
+--when.commands = ["diff", "show"]
+[--scope.ui]
+pager = "delta"
