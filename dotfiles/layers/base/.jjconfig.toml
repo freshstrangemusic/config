@@ -1,8 +1,12 @@
+[aliases]
+l = ["log", "--reversed"]
+s = ["l", "-r", "trunk()::@ | @-::"]
+
 [git]
 subprocess = true
 
 [ui]
-default-command = ["log", "--reversed"]
+default-command = ["s"]
 editor = "vim"
 paginate = "never"
 diff-editor = ":builtin"
