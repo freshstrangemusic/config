@@ -7,6 +7,7 @@
     any-nix-shell
     eza
     fish
+    delta
     git
     jujutsu
     just
