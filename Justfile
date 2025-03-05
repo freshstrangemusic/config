@@ -1,4 +1,4 @@
-set shell := ["/bin/bash", "-c"]
+set shell := ["/usr/bin/env", "bash", "-c"]
 
 hostname := `hostname`
 rebuild_cmd := if os() == "macos" { "darwin-rebuild" } else { "sudo nixos-rebuild" }
