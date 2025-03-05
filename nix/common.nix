@@ -14,6 +14,7 @@
     delta
     direnv
     git
+    gnumake
     jujutsu
     just
     nixfmt-rfc-style
