@@ -29,6 +29,7 @@ in
       "users"
       "wheel"
     ];
+    shell = pkgs.fish;
   };
 
   environment.systemPackages =
@@ -38,6 +39,7 @@ in
       docker
     ];
 
+  programs.fish.enable = true;
   programs.nix-ld.enable = true;
   programs.vim = {
     enable = true;
