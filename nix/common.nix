@@ -8,6 +8,7 @@
     eza
     fish
     delta
+    direnv
     git
     jujutsu
     just
