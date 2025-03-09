@@ -24,30 +24,59 @@
       nixpkgs,
       ...
     }:
+    let
+      common =
+        system:
+        import ./common.nix {
+          inherit inputs system;
+        };
+    in
     {
-      darwinConfigurations."vixen" = nix-darwin.lib.darwinSystem {
-        modules = [ ./hosts/vixen/configuration.nix ];
-        specialArgs = { inherit inputs; };
-      };
+      darwinConfigurations."vixen" =
+        let
+          system = "aarch64-darwin";
+        in
+        nix-darwin.lib.darwinSystem {
+          modules = [
+            ./hosts/vixen/configuration.nix
+            (common system)
+          ];
+        };
 
-      darwinConfigurations."kitsune" = nix-darwin.lib.darwinSystem {
-        modules = [ ./hosts/kitsune/configuration.nix ];
-        specialArgs = { inherit inputs; };
-      };
+      darwinConfigurations."kitsune" =
+        let
+          system = "aarch64-darwin";
+        in
+        nix-darwin.lib.darwinSystem {
+          modules = [
+            ./hosts/kitsune/configuration.nix
+            (common system)
+          ];
+        };
 
-      nixosConfigurations."tanuki" = nixpkgs.lib.nixosSystem {
-        system = "x86_64-linux";
-        modules = [ ./hosts/tanuki/configuration.nix ];
-        specialArgs = { inherit inputs; };
-      };
+      nixosConfigurations."tanuki" =
+        let
+          system = "x86_64-linux";
+        in
+        nixpkgs.lib.nixosSystem {
+          inherit system;
+          modules = [
+            ./hosts/tanuki/configuration.nix
+            (common system)
+          ];
+        };
 
-      nixosConfigurations."lovelace" = nixpkgs.lib.nixosSystem {
-        system = "x86_64-linux";
-        modules = [
-          nixos-wsl.nixosModules.default
-          ./hosts/lovelace/configuration.nix
-        ];
-        specialArgs = { inherit inputs; };
-      };
+      nixosConfigurations."lovelace" =
+        let
+          system = "x86_64-linux";
+        in
+        nixpkgs.lib.nixosSystem {
+          inherit system;
+          modules = [
+            nixos-wsl.nixosModules.default
+            ./hosts/lovelace/configuration.nix
+            (common system)
+          ];
+        };
     };
 }

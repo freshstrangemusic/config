@@ -2,15 +2,8 @@
   config,
   lib,
   pkgs,
-  inputs,
   ...
 }:
-let
-  common = (import ../../common.nix) {
-    inherit inputs pkgs;
-    system = "x86_64-linux";
-  };
-in
 {
   imports = [ ./hardware-configuration.nix ];
 
@@ -34,12 +27,9 @@ in
     shell = pkgs.fish;
   };
 
-  environment.systemPackages =
-    with pkgs;
-    common.systemPackages
-    ++ [
-      docker
-    ];
+  environment.systemPackages = with pkgs; [
+    docker
+  ];
 
   programs.fish.enable = true;
   programs.nix-ld.enable = true;

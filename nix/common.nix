@@ -1,11 +1,13 @@
 {
-  pkgs,
   inputs,
   system,
+}:
+{
+  pkgs,
   ...
 }:
 {
-  systemPackages = with pkgs; [
+  environment.systemPackages = with pkgs; [
     any-nix-shell
     eza
     fish

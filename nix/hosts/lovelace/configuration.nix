@@ -2,25 +2,15 @@
   config,
   lib,
   pkgs,
-  inputs,
   ...
 }:
-let
-  common = (import ../../common.nix) {
-    inherit inputs pkgs;
-    system = "aarch64-darwin";
-  };
-in
 {
   imports = [ ./wsl.nix ];
 
-  environment.systemPackages =
-    with pkgs;
-    common.systemPackages
-    ++ [
-      nodejs_23
-      python313
-    ];
+  environment.systemPackages = with pkgs; [
+    nodejs_23
+    python313
+  ];
 
   programs.fish.enable = true;
   programs.nix-ld.enable = true;

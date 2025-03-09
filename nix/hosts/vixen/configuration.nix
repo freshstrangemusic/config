@@ -2,31 +2,21 @@ self@{
   pkgs,
   config,
   lib,
-  inputs,
   ...
 }:
-let
-  common = (import ../../common.nix) {
-    inherit inputs pkgs;
-    system = "x86_64-linux";
-  };
-in
 {
   nixpkgs.config.allowUnfree = true;
 
-  environment.systemPackages =
-    with pkgs;
-    common.systemPackages
-    ++ [
-      _1password-cli
-      alacritty
-      fastmod
-      fira-code
-      gnused
-      poetry
-      python311Packages.pipx
-      vlc-bin
-    ];
+  environment.systemPackages = with pkgs; [
+    _1password-cli
+    alacritty
+    fastmod
+    fira-code
+    gnused
+    poetry
+    python311Packages.pipx
+    vlc-bin
+  ];
 
   fonts.packages = with pkgs; [ pkgs.fira-code ];
 
