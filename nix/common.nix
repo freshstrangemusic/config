@@ -1,5 +1,7 @@
 {
   pkgs,
+  inputs,
+  system,
   ...
 }:
 {
@@ -17,5 +19,7 @@
     stow
     vim
     wget
+
+    inputs.patisserie.defaultPackage.${system}
   ];
 }

@@ -2,11 +2,13 @@
   config,
   lib,
   pkgs,
+  inputs,
   ...
 }:
 let
   common = (import ../../common.nix) {
-    inherit pkgs;
+    inherit inputs pkgs;
+    system = "aarch64-darwin";
   };
 in
 {

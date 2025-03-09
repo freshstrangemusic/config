@@ -10,10 +10,15 @@
     };
 
     nixos-wsl.url = "github:nix-community/nixos-wsl?ref=main";
+
+    patisserie = {
+      url = "github:freshstrangemusic/patisserie";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs =
-    {
+    inputs@{
       nix-darwin,
       nixos-wsl,
       nixpkgs,
@@ -22,15 +27,18 @@
     {
       darwinConfigurations."vixen" = nix-darwin.lib.darwinSystem {
         modules = [ ./hosts/vixen/configuration.nix ];
+        specialArgs = { inherit inputs; };
       };
 
       darwinConfigurations."kitsune" = nix-darwin.lib.darwinSystem {
         modules = [ ./hosts/kitsune/configuration.nix ];
+        specialArgs = { inherit inputs; };
       };
 
       nixosConfigurations."tanuki" = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
         modules = [ ./hosts/tanuki/configuration.nix ];
+        specialArgs = { inherit inputs; };
       };
 
       nixosConfigurations."lovelace" = nixpkgs.lib.nixosSystem {
@@ -39,6 +47,7 @@
           nixos-wsl.nixosModules.default
           ./hosts/lovelace/configuration.nix
         ];
+        specialArgs = { inherit inputs; };
       };
     };
 }

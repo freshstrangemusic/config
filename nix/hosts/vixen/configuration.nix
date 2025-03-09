@@ -2,11 +2,13 @@ self@{
   pkgs,
   config,
   lib,
+  inputs,
   ...
 }:
 let
   common = (import ../../common.nix) {
-    inherit pkgs;
+    inherit inputs pkgs;
+    system = "x86_64-linux";
   };
 in
 {
