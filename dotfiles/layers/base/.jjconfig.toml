@@ -1,6 +1,6 @@
 [aliases]
 l = ["log", "--reversed"]
-s = ["l", "-r", "trunk()::@ | @-::"]
+s = ["l", "-r", "fork_point(mutable()::@)- | fork_point(mutable()::@)::"]
 
 [git]
 subprocess = true
