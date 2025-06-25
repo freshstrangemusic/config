@@ -10,9 +10,6 @@ descmany = ["describe", "--config", "templates.draft_commit_description='descrip
 "wip()" = "mutable()- | mutable()::heads(mutable())"
 "wip_heads()" = "heads(mutable() & mine() & empty())- | heads(mutable() & mine() & ~empty())"
 
-[git]
-subprocess = true
-
 [ui]
 default-command = ["s"]
 editor = "vim"
