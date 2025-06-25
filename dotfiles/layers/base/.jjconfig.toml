@@ -3,6 +3,7 @@ l = ["log", "--reversed"]
 s = ["l", "-r", "stack()"]
 wip = ["l", "-r", "wip()"]
 heads = ["l", "-r", "wip_heads()"]
+descmany = ["describe", "--config", "templates.draft_commit_description='description'"]
 
 [revset-aliases]
 "stack()" = "fork_point(mutable()::@)- | fork_point(mutable()::@)::"
