@@ -9,7 +9,7 @@ subprocess = true
 default-command = ["s"]
 editor = "vim"
 diff-editor = ":builtin"
-conflict-marker-style = "snapshot"
+conflict-marker-style = "git"
 
 [ui.diff]
 format = "git"
