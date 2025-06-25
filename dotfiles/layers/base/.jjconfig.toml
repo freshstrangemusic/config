@@ -2,10 +2,12 @@
 l = ["log", "--reversed"]
 s = ["l", "-r", "stack()"]
 wip = ["l", "-r", "wip()"]
+heads = ["l", "-r", "wip_heads()"]
 
 [revset-aliases]
 "stack()" = "fork_point(mutable()::@)- | fork_point(mutable()::@)::"
 "wip()" = "mutable()- | mutable()::heads(mutable())"
+"wip_heads()" = "heads(mutable() & mine() & empty())- | heads(mutable() & mine() & ~empty())"
 
 [git]
 subprocess = true
