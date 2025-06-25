@@ -1,9 +1,11 @@
 [aliases]
 l = ["log", "--reversed"]
 s = ["l", "-r", "stack()"]
+wip = ["l", "-r", "wip()"]
 
 [revset-aliases]
 "stack()" = "fork_point(mutable()::@)- | fork_point(mutable()::@)::"
+"wip()" = "mutable()- | mutable()::heads(mutable())"
 
 [git]
 subprocess = true
