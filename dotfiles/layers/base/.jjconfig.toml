@@ -16,6 +16,18 @@ conflict-marker-style = "git"
 name = "Beth Rennie"
 email = "beth@brennie.ca"
 
+[templates]
+draft_commit_description = '''
+concat(
+  description,
+  surround(
+    "\nJJ: This commit contains the following changes:\n", "",
+    indent("JJ:     ", diff.stat(72)),
+  ),
+  surround("\nJJ: Diff:\n", "", indent("JJ:  ", diff.git(4)))
+)
+'''
+
 [[--scope]]
 --when.commands = ["diff", "show"]
 [--scope.ui]
