@@ -9,10 +9,8 @@ subprocess = true
 default-command = ["s"]
 editor = "vim"
 diff-editor = ":builtin"
+diff-formatter = ":git"
 conflict-marker-style = "git"
-
-[ui.diff]
-format = "git"
 
 [user]
 name = "Beth Rennie"
