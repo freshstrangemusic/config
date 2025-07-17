@@ -21,7 +21,7 @@ uninstall-dotfiles:
     stow -t ~ -d dotfiles/layers/base -D .
 
 rebuild:
-    {{ rebuild_cmd }} switch --flake ./nix#{{ hostname }}
+    cd nix && {{ rebuild_cmd }} switch --flake .#{{ hostname }}
     jj bookmark set hosts/{{ hostname }} --to 'latest(::@ & ~empty())' --allow-backwards
 
 edit-host-configuration:
