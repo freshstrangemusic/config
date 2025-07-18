@@ -15,6 +15,7 @@ self@{
     gnused
     poetry
     python311Packages.pipx
+    watchman
     vlc-bin
   ];
 
