@@ -1,7 +1,7 @@
 set shell := ["/usr/bin/env", "bash", "-c"]
 
 hostname := `hostname`
-rebuild_cmd := if os() == "macos" { "darwin-rebuild" } else { "sudo nixos-rebuild" }
+rebuild_cmd := if os() == "macos" { "darwin-rebuild" } else { "nixos-rebuild" }
 is_wsl := "-n $WSL_DISTRO_NAME"
 
 default:
@@ -21,7 +21,7 @@ uninstall-dotfiles:
     stow -t ~ -d dotfiles/layers/base -D .
 
 rebuild:
-    cd nix && {{ rebuild_cmd }} switch --flake .#{{ hostname }}
+    cd nix && sudo {{ rebuild_cmd }} switch --flake .#{{ hostname }}
     jj bookmark set hosts/{{ hostname }} --to 'latest(::@ & ~empty())' --allow-backwards
 
 edit-host-configuration:
