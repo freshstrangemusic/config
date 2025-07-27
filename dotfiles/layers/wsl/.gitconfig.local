@@ -1,2 +1,3 @@
 [core]
-	sshCommand = ssh.exe
+	sshCommand = /mnt/c/Windows/System32/OpenSSH/ssh.exe
+
