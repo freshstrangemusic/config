@@ -27,13 +27,6 @@
       nixpkgs,
       ...
     }:
-    let
-      common =
-        system:
-        import ./common.nix {
-          inherit inputs system;
-        };
-    in
     {
       darwinConfigurations."vixen" =
         let
@@ -41,8 +34,8 @@
         in
         nix-darwin.lib.darwinSystem {
           modules = [
+            ./modules/common.nix
             ./hosts/vixen/configuration.nix
-            (common system)
           ];
         };
 
@@ -51,9 +44,10 @@
           system = "aarch64-darwin";
         in
         nix-darwin.lib.darwinSystem {
+          specialArgs = { inherit inputs system; };
           modules = [
+            ./modules/common.nix
             ./hosts/kitsune/configuration.nix
-            (common system)
           ];
         };
 
@@ -63,9 +57,10 @@
         in
         nixpkgs.lib.nixosSystem {
           inherit system;
+          specialArgs = { inherit inputs system; };
           modules = [
+            ./modules/common.nix
             ./hosts/tanuki/configuration.nix
-            (common system)
           ];
         };
 
@@ -75,10 +70,11 @@
         in
         nixpkgs.lib.nixosSystem {
           inherit system;
+          specialArgs = { inherit inputs system; };
           modules = [
             nixos-wsl.nixosModules.default
+            ./modules/common.nix
             ./hosts/lovelace/configuration.nix
-            (common system)
           ];
         };
     };

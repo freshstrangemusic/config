@@ -1,9 +1,9 @@
+# Common configuration between all nix hosts.
+
 {
   inputs,
-  system,
-}:
-{
   pkgs,
+  system,
   ...
 }:
 {
