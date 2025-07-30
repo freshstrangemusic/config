@@ -15,6 +15,7 @@ self@{
     gnused
     poetry
     python311Packages.pipx
+    vlc-bin
   ];
 
   fonts.packages = with pkgs; [ pkgs.fira-code ];
