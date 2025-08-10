@@ -21,8 +21,6 @@
 
   networking.hostName = "lovelace";
 
-  services.envfs.enable = true;
-
   users.groups.beth = { };
   users.users.beth = {
     isNormalUser = true;
