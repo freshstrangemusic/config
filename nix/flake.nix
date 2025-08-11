@@ -33,6 +33,7 @@
           system = "aarch64-darwin";
         in
         nix-darwin.lib.darwinSystem {
+          specialArgs = { inherit inputs system; };
           modules = [
             ./modules/common.nix
             ./hosts/vixen/configuration.nix

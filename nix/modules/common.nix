@@ -1,12 +1,18 @@
 # Common configuration between all nix hosts.
 
 {
-  inputs,
   pkgs,
   system,
+  inputs,
   ...
 }:
+let
+  overlay = final: prev: {
+    patisserie = inputs.patisserie.defaultPackage.${system};
+  };
+in
 {
+  nixpkgs.overlays = [ overlay ];
   environment.systemPackages = with pkgs; [
     any-nix-shell
     eza
@@ -18,11 +24,10 @@
     jujutsu
     just
     nixfmt-rfc-style
+    patisserie
     ripgrep
     stow
     vim
     wget
-
-    inputs.patisserie.defaultPackage.${system}
   ];
 }
