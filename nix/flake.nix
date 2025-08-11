@@ -36,6 +36,7 @@
           specialArgs = { inherit inputs system; };
           modules = [
             ./modules/common.nix
+            ./modules/macOS.nix
             ./hosts/vixen/configuration.nix
           ];
         };
@@ -48,6 +49,7 @@
           specialArgs = { inherit inputs system; };
           modules = [
             ./modules/common.nix
+            ./modules/macOS.nix
             ./hosts/kitsune/configuration.nix
           ];
         };
