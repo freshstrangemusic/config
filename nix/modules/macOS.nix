@@ -3,9 +3,14 @@
 {
 	config,
   lib,
+  pkgs,
   ...
 }:
 {
+  environment.systemPackages = with pkgs; [
+    coreutils
+  ];
+
   # Replace the default /Applications/Nix Apps symlink with a directory
   # containing copies of the installed apps.
   #
