@@ -7,11 +7,24 @@
   ...
 }:
 {
-  imports = [ ./macOS-update-notify ];
+  nixpkgs.overlays = [
+    (final: prev: {
+      macOSUpdateNotify = pkgs.callPackage ../packages/macOS-update-notify { };
+    })
+  ];
 
   environment.systemPackages = with pkgs; [
     coreutils
+    macOSUpdateNotify
   ];
+
+  launchd.user.agents.macOSUpdateNotify = {
+    command = "${pkgs.macOSUpdateNotify}/bin/macOS-update-notify";
+    serviceConfig = {
+      RunAtLoad = true;
+      StartInterval = 3600;
+    };
+  };
 
   # Replace the default /Applications/Nix Apps symlink with a directory
   # containing copies of the installed apps.
