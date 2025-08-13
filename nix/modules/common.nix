@@ -6,13 +6,8 @@
   inputs,
   ...
 }:
-let
-  overlay = final: prev: {
-    patisserie = inputs.patisserie.defaultPackage.${system};
-  };
-in
 {
-  nixpkgs.overlays = [ overlay ];
+  nixpkgs.overlays = [ inputs.patisserie.overlays.${system}.default ];
   environment.systemPackages = with pkgs; [
     any-nix-shell
     eza
