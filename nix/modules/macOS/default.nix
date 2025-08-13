@@ -1,12 +1,14 @@
 # Common configuration between all macOS hosts.
 
 {
-	config,
+  config,
   lib,
   pkgs,
   ...
 }:
 {
+  imports = [ ./macOS-update-notify ];
+
   environment.systemPackages = with pkgs; [
     coreutils
   ];

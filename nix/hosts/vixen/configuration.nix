@@ -39,6 +39,7 @@ self@{
 
   nixpkgs.hostPlatform = "aarch64-darwin";
 
+  system.primaryUser = "beth";
   users.knownUsers = [ "beth" ];
   users.users.beth = {
     uid = 501;
