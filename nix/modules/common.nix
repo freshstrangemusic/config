@@ -7,6 +7,8 @@
   ...
 }:
 {
+  nix.settings.experimental-features = "nix-command flakes";
+
   nixpkgs.overlays = [
     inputs.patisserie.overlays.${system}.default
     (final: prev: {

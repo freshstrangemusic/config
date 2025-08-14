@@ -25,7 +25,6 @@ self@{
 
   nix.enable = false;
   nix.package = pkgs.nix;
-  nix.settings.experimental-features = "nix-command flakes";
 
   programs.zsh.enable = true;
   programs.fish.enable = true;
