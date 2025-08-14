@@ -92,7 +92,7 @@ done
 
 export NIX_CONFIG="extra-experimental-features = nix-command flakes"
 if [[ "${OS}" == "Darwin" ]] && ! which nix-darwin &>/dev/null; then
-  nix run "nix-darwin#darwin-rebuild" -- switch --flake "./nix#${HOSTNAME}"
+  sudo nix run "nix-darwin#darwin-rebuild" -- switch --flake "./nix#${HOSTNAME}"
 elif [[ "${OS}" != "Darwin" ]]; then
   sudo nixos-rebuild --switch --flake "./nix#${HOSTNAME}"
 fi
