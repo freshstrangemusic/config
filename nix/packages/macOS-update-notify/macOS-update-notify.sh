@@ -1,8 +1,11 @@
-CHECKOUT="${HOME}/Workspace/src/github.com/freshstrangemusic/config"
+if [[ $# -eq 0 ]] || [[ $# -gt 1 ]]; then
+  echo "USAGE: $0 flake.lock" >&2
+  exit 2
+fi
 
-if ! flake-updated "${CHECKOUT}/nix/flake.lock"; then
-    terminal-notifier \
-        -ignoreDnD \
-        -title "⚠️ Update Required️" \
-        -message "flake.lock is over one week old"
+if ! flake-updated "${1}"; then
+  terminal-notifier \
+    -ignoreDnD \
+    -title "⚠️ Update Required" \
+    -message "flake.lock is over one week old"
 fi

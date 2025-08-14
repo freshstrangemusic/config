@@ -1,6 +1,7 @@
 # Common configuration between all macOS hosts.
 
 {
+  checkoutPath,
   config,
   lib,
   pkgs,
@@ -18,7 +19,7 @@
   ];
 
   launchd.user.agents.macOSUpdateNotify = {
-    command = "${pkgs.macOSUpdateNotify}/bin/macOS-update-notify";
+    command = "${pkgs.macOSUpdateNotify}/bin/macOS-update-notify ${checkoutPath}/nix/flake.lock";
     serviceConfig = {
       RunAtLoad = true;
       StartInterval = 3600;

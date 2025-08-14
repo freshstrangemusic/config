@@ -30,10 +30,11 @@
     {
       darwinConfigurations."vixen" =
         let
+          checkoutPath = "/Users/beth/Workspace/src/github.com/freshstrangemusic/config";
           system = "aarch64-darwin";
         in
         nix-darwin.lib.darwinSystem {
-          specialArgs = { inherit inputs system; };
+          specialArgs = { inherit checkoutPath inputs system; };
           modules = [
             ./modules/common.nix
             ./modules/macOS.nix
@@ -43,10 +44,11 @@
 
       darwinConfigurations."kitsune" =
         let
+          checkoutPath = "/Users/beth/Workspace/src/github.com/freshstrangemusic/config";
           system = "aarch64-darwin";
         in
         nix-darwin.lib.darwinSystem {
-          specialArgs = { inherit inputs system; };
+          specialArgs = { inherit checkoutPath inputs system; };
           modules = [
             ./modules/common.nix
             ./modules/macOS.nix
