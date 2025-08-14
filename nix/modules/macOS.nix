@@ -15,7 +15,6 @@
 
   environment.systemPackages = with pkgs; [
     coreutils
-    macOSUpdateNotify
   ];
 
   launchd.user.agents.macOSUpdateNotify = {
