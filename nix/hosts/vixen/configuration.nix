@@ -23,9 +23,6 @@ self@{
 
   networking.computerName = "vixen";
 
-  nix.enable = false;
-  nix.package = pkgs.nix;
-
   programs.zsh.enable = true;
   programs.fish.enable = true;
 

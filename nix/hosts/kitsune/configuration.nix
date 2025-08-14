@@ -22,9 +22,6 @@ self@{
 
   networking.computerName = "kitsune";
 
-  nix.enable = false;
-  nix.package = pkgs.nix;
-
   programs.zsh.enable = true;
   programs.fish.enable = true;
 

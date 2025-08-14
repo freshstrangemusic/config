@@ -8,6 +8,10 @@
   ...
 }:
 {
+  # Let Determinate manage the nix installation.
+  nix.enable = false;
+  nix.package = pkgs.nix;
+
   nixpkgs.overlays = [
     (final: prev: {
       macOSUpdateNotify = pkgs.callPackage ../packages/macOS-update-notify { };
