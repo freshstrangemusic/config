@@ -34,4 +34,8 @@
     vim
     wget
   ];
+
+  # Require a git (or colocated jujutsu) checkout. If there is no git repository
+  # present, these attributes will not exist and the rebuild will fail.
+  system.configurationRevision = inputs.self.rev or inputs.self.dirtyRev;
 }

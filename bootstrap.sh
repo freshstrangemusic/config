@@ -72,7 +72,7 @@ fi
 
 if [[ ! -d "${CHECKOUT_PATH}/.jj" ]]; then
   mkdir -p $(dirname -- "${CHECKOUT_PATH}")
-  nix run "nixpkgs#jujutsu" -- git clone "${REPOSITORY_URL}" "${CHECKOUT_PATH}"
+  nix run "nixpkgs#jujutsu" -- git clone --colocate "${REPOSITORY_URL}" "${CHECKOUT_PATH}"
 fi
 
 cd -- "${CHECKOUT_PATH}"
