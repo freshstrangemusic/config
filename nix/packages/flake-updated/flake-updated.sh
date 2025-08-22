@@ -9,4 +9,4 @@ NOW=$(date +%s)
 DELTA=$((NOW - NIXPKGS_LAST_MODIFIED))
 ONE_WEEK=$((24 * 60 * 60))
 
-exit $((DELTA < ONE_WEEK))
+exit $((DELTA >= ONE_WEEK))
