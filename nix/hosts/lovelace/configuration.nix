@@ -36,5 +36,8 @@
     defaultUser = "beth";
   };
 
+  # nixos-wsl disables this.
+  security.sudo.wheelNeedsPassword = true;
+
   system.stateVersion = "24.11";
 }
