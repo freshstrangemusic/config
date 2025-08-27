@@ -5,8 +5,6 @@
   ...
 }:
 {
-  imports = [ ./wsl.nix ];
-
   environment.systemPackages = with pkgs; [
     nodejs_24
     python313
@@ -31,6 +29,11 @@
       "wheel"
     ];
     shell = pkgs.fish;
+  };
+
+  wsl = {
+    enable = true;
+    defaultUser = "beth";
   };
 
   system.stateVersion = "24.11";
