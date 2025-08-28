@@ -9,9 +9,10 @@ default:
 
 install-dotfiles:
     if [[ -f ~/.config/fish/config.fish ]]; then rm -rf -- ~/.config/fish; fi
-    mkdir -p ~/.ssh/config.d
     mkdir -p ~/.config/fish/functions
     mkdir -p ~/.config/fish/conf.d
+    mkdir -p ~/.config/zellij
+    mkdir -p ~/.ssh/config.d
     stow -t ~ -d dotfiles/layers/base .
     if [[ "{{ os() }}" = "macos" ]]; then stow -t ~ -d dotfiles/layers/macOS .; fi
     if [[ {{ is_wsl }} ]]; then stow -t ~ -d dotfiles/layers/wsl .; fi

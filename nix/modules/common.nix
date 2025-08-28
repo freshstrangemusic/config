@@ -38,6 +38,7 @@
     uv
     vim
     wget
+    zellij
   ];
 
   # Require a git (or colocated jujutsu) checkout. If there is no git repository
