@@ -18,19 +18,24 @@
 
   environment.systemPackages = with pkgs; [
     any-nix-shell
-    eza
-    fish
     delta
     direnv
+    eza
+    fish
     flake-updated
     git
     gnumake
     jujutsu
     just
     nixfmt-rfc-style
+    nodejs_24
     patisserie
+    pipx
+    poetry
+    python313
     ripgrep
     stow
+    uv
     vim
     wget
   ];

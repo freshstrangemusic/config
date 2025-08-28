@@ -14,7 +14,6 @@ self@{
     fira-code
     gnused
     poetry
-    python311Packages.pipx
     vlc-bin
   ];
 

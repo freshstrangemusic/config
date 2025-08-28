@@ -13,8 +13,6 @@ self@{
     fastmod
     fira-code
     gnused
-    poetry
-    python311Packages.pipx
     watchman
     vlc-bin
   ];

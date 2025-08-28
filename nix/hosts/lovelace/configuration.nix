@@ -5,11 +5,6 @@
   ...
 }:
 {
-  environment.systemPackages = with pkgs; [
-    nodejs_24
-    python313
-  ];
-
   programs.fish.enable = true;
   programs.nix-ld.enable = true;
   programs.vim = {
