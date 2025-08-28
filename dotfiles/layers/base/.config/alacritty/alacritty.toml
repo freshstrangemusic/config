@@ -7,3 +7,6 @@ size = 16
 
 [selection]
 save_to_clipboard = true
+
+[window]
+option_as_alt = "Both"
