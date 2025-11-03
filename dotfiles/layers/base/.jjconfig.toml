@@ -38,3 +38,6 @@ git_push_bookmark = '"freshstrangemusic/push-" ++ change_id.short()'
 --when.commands = ["diff", "show"]
 [--scope.ui]
 pager = "delta"
+
+[visualjj]
+snapshot-enabled = false
