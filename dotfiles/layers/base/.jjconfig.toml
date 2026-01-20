@@ -32,6 +32,7 @@ concat(
   surround("\nJJ: Diff:\n", "", indent("JJ:  ", diff.git(4)))
 )
 '''
+git_push_bookmark = '"freshstrangemusic/push-" ++ change_id.short()'
 
 [[--scope]]
 --when.commands = ["diff", "show"]
