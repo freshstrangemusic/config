@@ -1,6 +1,10 @@
 $env:EDITOR = "nvim"
 $env:LESS = "FRX"
 
+# mach commands tend to be faster and not cause divergence when using git
+# compared to jj.
+$env:MOZ_AVOID_JJ_VCS = 1
+
 function Get-ShortCWD() {
     $pathAsString = ([string] $executionContext.SessionState.Path.CurrentLocation)
 
