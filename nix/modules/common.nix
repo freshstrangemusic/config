@@ -27,7 +27,7 @@
     gnumake
     jujutsu
     just
-    nixfmt-rfc-style
+    nixfmt
     nodejs_24
     patisserie
     pipx
