@@ -1,13 +1,18 @@
 # Common configuration between all nix hosts.
 
 {
+  inputs,
+  lib,
   pkgs,
   system,
-  inputs,
   ...
 }:
 {
   nix.settings.experimental-features = "nix-command flakes";
+
+  nixpkgs.config.allowUnfreePredicate = pkg: builtins.elem (lib.getName pkg) [
+    "1password-cli"
+  ];
 
   nixpkgs.overlays = [
     inputs.patisserie.overlays.${system}.default
@@ -40,6 +45,8 @@
     wget
     zellij
   ];
+
+  programs._1password.enable = true;
 
   # Require a git (or colocated jujutsu) checkout. If there is no git repository
   # present, these attributes will not exist and the rebuild will fail.
