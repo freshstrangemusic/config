@@ -22,6 +22,8 @@
   ];
 
   environment.systemPackages = with pkgs; [
+    # programs._1password.enable does not add this package on macOS
+    _1password-cli
     any-nix-shell
     delta
     direnv
