@@ -19,6 +19,8 @@
   ];
 
   environment.systemPackages = with pkgs; [
+    # programs._1password.enable does not add this package on macOS
+    _1password-cli
     coreutils
   ];
 
@@ -29,6 +31,8 @@
       StartInterval = 3600;
     };
   };
+
+  programs._1password.enable = true;
 
   # Replace the default /Applications/Nix Apps symlink with a directory
   # containing copies of the installed apps.

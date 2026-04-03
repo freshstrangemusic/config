@@ -22,8 +22,6 @@
   ];
 
   environment.systemPackages = with pkgs; [
-    # programs._1password.enable does not add this package on macOS
-    _1password-cli
     any-nix-shell
     delta
     direnv
@@ -47,8 +45,6 @@
     wget
     zellij
   ];
-
-  programs._1password.enable = true;
 
   # Require a git (or colocated jujutsu) checkout. If there is no git repository
   # present, these attributes will not exist and the rebuild will fail.
