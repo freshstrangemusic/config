@@ -34,6 +34,9 @@ concat(
 '''
 git_push_bookmark = '"freshstrangemusic/push-" ++ change_id.short()'
 
+[template-aliases]
+oneline = 'commit_id.short() ++ " " ++ pad_end(30, author.name(), " ") ++ author.timestamp() ++ " " ++  description.first_line() ++  "\n"'
+
 [[--scope]]
 --when.commands = ["diff", "show"]
 [--scope.ui]
