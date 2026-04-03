@@ -3,7 +3,7 @@ set shell := ["/usr/bin/env", "bash", "-c"]
 hostname := `hostname`
 rebuild_cmd := if os() == "macos" { "darwin-rebuild" } else { "nixos-rebuild" }
 is_wsl := "-n $WSL_DISTRO_NAME"
-op_cmd := if os_family() == "windows" { "op.exe" } else { if x'$WSL_DISTRO_NAME' != "" { "op.exe" } else { "op" } }
+op_cmd := if os_family() == "windows" { "op.exe" } else { if x'${WSL_DISTRO_NAME:-}' != "" { "op.exe" } else { "op" } }
 
 default:
     @just --list
