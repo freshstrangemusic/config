@@ -38,6 +38,7 @@
     poetry
     python313
     ripgrep
+    rustup
     stow
     uv
     vim
