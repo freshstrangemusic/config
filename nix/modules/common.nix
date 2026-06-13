@@ -10,14 +10,17 @@
 {
   nix.settings.experimental-features = "nix-command flakes";
 
-  nixpkgs.config.allowUnfreePredicate = pkg: builtins.elem (lib.getName pkg) [
-    "1password-cli"
-  ];
+  nixpkgs.config.allowUnfreePredicate =
+    pkg:
+    builtins.elem (lib.getName pkg) [
+      "1password-cli"
+    ];
 
   nixpkgs.overlays = [
     inputs.patisserie.overlays.${system}.default
     (final: prev: {
       flake-updated = pkgs.callPackage ../packages/flake-updated { };
+      rust-analyzer-wrapper = pkgs.callPackage ../packages/rust-analyzer-wrapper { };
     })
   ];
 
