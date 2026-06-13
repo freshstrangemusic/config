@@ -3,7 +3,7 @@
 This repository contains my system configuration. It makes a lot of assumptions and as such won't
 necessarily work in your environment.
 
-It must be checked out at `$HOME/Workspace/src/github.com/brennie/config` because it contains
+It must be checked out at `$HOME/Workspace/src/github.com/freshstrangemusic/config` because it contains
 relative symlinks up into `$HOME` (e.g.,
 `dotfiles/layers/macOS/Library/Application Support/pypoetry`).
 
