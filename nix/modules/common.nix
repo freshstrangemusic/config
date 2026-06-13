@@ -41,6 +41,7 @@
     poetry
     python313
     ripgrep
+    rust-analyzer-wrapper
     rustup
     stow
     uv
