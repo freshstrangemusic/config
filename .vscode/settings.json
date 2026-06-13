@@ -1,0 +1,22 @@
+{
+  "editor.insertSpaces": true,
+  "files.associations": {
+    ".gitconfig.local": "properties",
+    ".gitignore-global": "ignore",
+    "flake.lock": "json",
+  },
+  "[just]": {
+    "editor.tabSize": 4,
+  },
+  "[markdown]": {
+    "editor.wordWrap": "wordWrapColumn",
+    "editor.wordWrapColumn": 100,
+    "vim.textwidth": 100,
+  },
+  "[nix]": {
+    "editor.tabSize": 2,
+  },
+  "[shellscript]": {
+    "editor.tabSize": 2,
+  },
+}
