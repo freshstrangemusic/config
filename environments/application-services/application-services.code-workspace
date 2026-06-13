@@ -1,0 +1,35 @@
+{
+    "folders": [
+        {
+            "path": ".",
+            "name": "[environment]"
+        },
+        {
+            "path": "../../../../mozilla/application-services"
+        },
+    ],
+    "settings": {
+        "terminal.integrated.cwd": "../../../../mozilla/application-services",
+        "terminal.integrated.defaultProfile.linux": "fish [nix-shell]",
+        "terminal.integrated.profiles.linux": {
+            "fish [nix-shell]": {
+                "path": "nix-shell",
+                "args": [
+                    "${workspaceFolder}/shell.nix",
+                    "--command",
+                    "fish"
+                ],
+                "env": {
+                    "NIXPKGS_ALLOW_UNFREE": "1",
+                    "NIXPKGS_ACCEPT_ANDROID_SDK_LICENSE": "1",
+                },
+            }
+        },
+        "rust-analyzer.server.path": "rust-analyzer-wrapper",
+        "rust-analyzer.server.extraEnv": {
+            "RUST_ANALYZER_WRAPPER_NIX_SHELL_PATH": "${userHome}/Workspace/src/github.com/freshstrangemusic/config/environments/application-services",
+            "NIXPKGS_ALLOW_UNFREE": "1",
+            "NIXPKGS_ACCEPT_ANDROID_SDK_LICENSE": "1",
+        }
+    }
+}
