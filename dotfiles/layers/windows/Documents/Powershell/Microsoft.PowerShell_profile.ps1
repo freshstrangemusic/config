@@ -99,7 +99,7 @@ Set-PSReadlineKeyHandler -Key Alt+e `
     Remove-Item $temp.Name
 }
 
-$env:EDITOR = "vim"
+$env:EDITOR = "nvim"
 
 Function Set-Mozconfig {
     param($mozconfig)
