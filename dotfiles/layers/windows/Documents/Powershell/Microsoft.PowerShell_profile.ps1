@@ -1,3 +1,6 @@
+$env:EDITOR = "nvim"
+$env:LESS = "FRX"
+
 function Get-ShortCWD() {
     $pathAsString = ([string] $executionContext.SessionState.Path.CurrentLocation)
 
@@ -99,8 +102,6 @@ Set-PSReadlineKeyHandler -Key Alt+e `
     Remove-Item $temp.Name
 }
 
-$env:EDITOR = "nvim"
-
 Function Set-Mozconfig {
     param($mozconfig)
 
@@ -120,5 +121,3 @@ Register-ArgumentCompleter -CommandName Set-Mozconfig -ParameterName mozconfig -
         ForEach-Object { $_.Name } | `
         Where-Object { $_ -like "$wordToComplete*" }
 }
-
-$env:LESS = "FRX"
