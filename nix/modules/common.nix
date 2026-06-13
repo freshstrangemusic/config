@@ -34,6 +34,7 @@
     gnumake
     jujutsu
     just
+    nixd
     nixfmt
     nodejs_24
     patisserie
