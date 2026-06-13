@@ -34,6 +34,7 @@
     gnumake
     jujutsu
     just
+    just-lsp
     nixd
     nixfmt
     nodejs_24

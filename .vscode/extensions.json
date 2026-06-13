@@ -1,0 +1,8 @@
+{
+  "recommendations": [
+    "jnoortheen.nix-ide",
+    "kdl-org.kdl-v1",
+    "nefrob.vscode-just-syntax",
+    "tamasfe.even-better-toml",
+  ]
+}
