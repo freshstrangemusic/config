@@ -12,7 +12,6 @@ descmany = ["describe", "--config", "templates.draft_commit_description='descrip
 
 [ui]
 default-command = ["s"]
-editor = "vim"
 diff-editor = ":builtin"
 diff-formatter = ":git"
 conflict-marker-style = "git"

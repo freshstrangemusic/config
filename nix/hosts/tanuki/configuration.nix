@@ -38,10 +38,6 @@
   programs._1password.enable = true;
   programs.fish.enable = true;
   programs.nix-ld.enable = true;
-  programs.vim = {
-    enable = true;
-    defaultEditor = true;
-  };
 
   services.envfs.enable = true;
   services.openssh.enable = true;

@@ -37,6 +37,7 @@
     just-lsp
     nixd
     nixfmt
+    neovim
     nodejs_24
     patisserie
     pipx
@@ -47,10 +48,14 @@
     rustup
     stow
     uv
-    vim
     wget
     zellij
   ];
+
+  programs.neovim = {
+    defaultEditor = true;
+    vimAlias = true;
+  };
 
   # Require a git (or colocated jujutsu) checkout. If there is no git repository
   # present, these attributes will not exist and the rebuild will fail.
