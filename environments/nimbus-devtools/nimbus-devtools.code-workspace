@@ -1,0 +1,11 @@
+{
+  "folders": [
+    {
+      "name": "[environment]",
+      "path": "."
+    },
+    {
+      "path": "../../../../mozilla-extensions/nimbus-devtools",
+    }
+  ]
+}
