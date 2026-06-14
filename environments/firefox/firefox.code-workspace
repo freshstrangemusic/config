@@ -1,0 +1,32 @@
+{
+  "folders": [
+    {
+      "name": "[environment]",
+      "path": ".",
+    },
+    {
+      "name": "[mozconfigs]",
+      "path": "C:\\Users\\Beth\\.mozbuild\\mozconfigs"
+    },
+    {
+      "name": "[objdir :: android :: nimbus-fml generated]",
+      "path": "../../../../mozilla-firefox/firefox/obj-android/gradle/build/mobile/android/fenix/app/generated/source/nimbus",
+    },
+    {
+      "path": "../../../../mozilla-firefox/firefox"
+    },
+  ],
+  "settings": {
+    "explorer.excludeGitIgnore": true,
+
+    "peacock.remoteColor": "#ff3d00",
+
+    "workbench.colorCustomizations": {
+      "commandCenter.border": "#e7e7e799",
+      "titleBar.activeBackground": "#ff3d00",
+      "titleBar.activeForeground": "#e7e7e7",
+      "titleBar.inactiveBackground": "#ff3d0099",
+      "titleBar.inactiveForeground": "#e7e7e799"
+    },
+  }
+}
