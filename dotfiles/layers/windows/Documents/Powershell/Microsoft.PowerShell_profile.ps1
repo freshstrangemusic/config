@@ -5,6 +5,8 @@ $env:LESS = "FRX"
 # compared to jj.
 $env:MOZ_AVOID_JJ_VCS = 1
 
+Set-Alias -Name ls -Value lsd
+
 function Get-ShortCWD() {
     $pathAsString = ([string] $executionContext.SessionState.Path.CurrentLocation)
 
@@ -76,8 +78,6 @@ function prompt() {
 
     " "
 }
-
-Set-Alias -Name ls -Value lsd
 
 Set-PSReadLineOption -EditMode Emacs -BellStyle None
 Set-PSReadLineKeyHandler -Key Tab -Function MenuComplete
