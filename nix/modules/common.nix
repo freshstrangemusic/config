@@ -51,10 +51,11 @@
     wget
     zellij
   ];
-
-  programs.neovim = {
-    defaultEditor = true;
-    vimAlias = true;
+  environment.variables = {
+    EDITOR = "nvim";
+  };
+  environment.shellAliases = {
+    vim = "nvim";
   };
 
   # Require a git (or colocated jujutsu) checkout. If there is no git repository

@@ -1,4 +1,3 @@
-set -gx EDITOR vim
 set -gx LESS FRX
 
 fish_add_path ~/.local/bin
