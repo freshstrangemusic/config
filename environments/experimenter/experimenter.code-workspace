@@ -1,0 +1,28 @@
+{
+  "folders": [
+    {
+      "name": "[environment]",
+      "path": "."
+    },
+    {
+      "path": "../../../../mozilla/experimenter",
+    }
+  ],
+  "settings": {
+    "explorer.excludeGitIgnore": true,
+
+    "extensions.ignoreRecommendations": true,
+
+    "peacock.remoteColor": "#42b883",
+
+    "terminal.integrated.cwd": "../../../../mozilla/experimenter",
+
+    "workbench.colorCustomizations": {
+      "commandCenter.border": "#15202b99",
+      "titleBar.activeBackground": "#42b883",
+      "titleBar.activeForeground": "#15202b",
+      "titleBar.inactiveBackground": "#42b88399",
+      "titleBar.inactiveForeground": "#15202b99"
+    },
+  }
+}
