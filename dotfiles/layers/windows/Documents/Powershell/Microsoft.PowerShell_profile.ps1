@@ -6,6 +6,7 @@ $env:LESS = "FRX"
 $env:MOZ_AVOID_JJ_VCS = 1
 
 Set-Alias -Name ls -Value lsd
+Set-Alias studio64 "C:\Program Files\Android\Android Studio\bin\studio64.exe"
 
 function Get-ShortCWD() {
     $pathAsString = ([string] $executionContext.SessionState.Path.CurrentLocation)
