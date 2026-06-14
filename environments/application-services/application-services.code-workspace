@@ -1,8 +1,8 @@
 {
   "folders": [
     {
+      "name": "[environment]",
       "path": ".",
-      "name": "[environment]"
     },
     {
       "path": "../../../../mozilla/application-services"
