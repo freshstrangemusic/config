@@ -5,6 +5,7 @@
       "path": "."
     },
     {
+      "name": "experimenter",
       "path": "../../../../mozilla/experimenter",
     }
   ],
@@ -15,7 +16,7 @@
 
     "peacock.remoteColor": "#42b883",
 
-    "terminal.integrated.cwd": "../../../../mozilla/experimenter",
+    "terminal.integrated.cwd": "${workspaceFolder:experimenter}",
 
     "workbench.colorCustomizations": {
       "commandCenter.border": "#15202b99",
