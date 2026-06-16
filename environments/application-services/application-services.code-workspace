@@ -16,7 +16,7 @@
       "fish [nix-shell]": {
         "path": "nix-shell",
         "args": [
-          "${workspaceFolder}/shell.nix",
+          "${workspaceFolder:[environment]}/shell.nix",
           "--command",
           "fish"
         ],
