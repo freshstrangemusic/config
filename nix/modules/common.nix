@@ -27,6 +27,7 @@
   environment.systemPackages = with pkgs; [
     any-nix-shell
     delta
+    direnv
     eza
     fish
     flake-updated
