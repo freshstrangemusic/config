@@ -21,6 +21,12 @@
 
     "extensions.ignoreRecommendations": true,
 
+    "files.associations": {
+      "*.mozconfig": "shellscript",
+      "moz.build": "python",
+      "mozconfig": "shellscript",
+    },
+
     "peacock.remoteColor": "#ff3d00",
 
     "workbench.colorCustomizations": {
