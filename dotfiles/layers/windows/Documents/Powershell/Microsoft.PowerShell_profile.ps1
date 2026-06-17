@@ -7,6 +7,7 @@ $env:MOZ_AVOID_JJ_VCS = 1
 
 Set-Alias ls lsd
 Set-Alias studio64 "C:\Program Files\Android\Android Studio\bin\studio64.exe"
+Set-Alias vim nvim
 
 function Get-ShortCWD() {
     $pathAsString = ([string] $executionContext.SessionState.Path.CurrentLocation)
