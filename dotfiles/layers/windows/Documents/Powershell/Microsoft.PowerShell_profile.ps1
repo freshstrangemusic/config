@@ -127,3 +127,23 @@ Register-ArgumentCompleter -CommandName Set-Mozconfig -ParameterName mozconfig -
         ForEach-Object { $_.Name } | `
         Where-Object { $_ -like "$wordToComplete*" }
 }
+
+Function which {
+    param($command)
+
+    $commandInfo = (Get-Command $command -ErrorAction stop)
+
+    switch ($commandInfo.CommandType)  {
+        ([System.Management.Automation.CommandTypes]::Application) {
+            Write-Host "$($commandInfo.Source)"
+        }
+
+        ([System.Management.Automation.CommandTypes]::Alias) {
+            Write-Host "Set-Alias $command $($commandInfo.Definition)"
+        }
+
+        ([System.Management.Automation.CommandTypes]::Function) {
+            Write-Host "Function $command"
+        }
+    }
+}
