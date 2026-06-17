@@ -19,6 +19,8 @@
   "settings": {
     "explorer.excludeGitIgnore": true,
 
+    "extensions.ignoreRecommendations": true,
+
     "peacock.remoteColor": "#ff3d00",
 
     "workbench.colorCustomizations": {
