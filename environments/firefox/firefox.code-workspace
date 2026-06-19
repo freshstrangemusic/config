@@ -27,6 +27,8 @@
       "mozconfig": "shellscript",
     },
 
+    "git.ignoreLimitWarning": true,
+
     "peacock.remoteColor": "#ff3d00",
 
     "workbench.colorCustomizations": {
