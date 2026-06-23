@@ -5,6 +5,7 @@ $env:LESS = "FRX"
 # compared to jj.
 $env:MOZ_AVOID_JJ_VCS = 1
 
+Set-Alias FileLocksmithCLI "$env:LOCALAPPDATA\PowerToys\FileLocksmithCLI.exe"
 Set-Alias ls lsd
 Set-Alias studio64 "C:\Program Files\Android\Android Studio\bin\studio64.exe"
 Set-Alias vim nvim
