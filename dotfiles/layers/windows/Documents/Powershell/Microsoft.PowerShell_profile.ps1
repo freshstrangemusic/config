@@ -135,15 +135,15 @@ Function which {
 
     switch ($commandInfo.CommandType)  {
         ([System.Management.Automation.CommandTypes]::Application) {
-            Write-Host "$($commandInfo.Source)"
+            "$($commandInfo.Source)"
         }
 
         ([System.Management.Automation.CommandTypes]::Alias) {
-            Write-Host "Set-Alias $command $($commandInfo.Definition)"
+            "Set-Alias $command $($commandInfo.Definition)"
         }
 
         ([System.Management.Automation.CommandTypes]::Function) {
-            Write-Host "Function $command"
+            "Function $command"
         }
     }
 }
