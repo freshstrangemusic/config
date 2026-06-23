@@ -1,4 +1,5 @@
 set shell := ["/usr/bin/env", "bash", "-c"]
+set windows-shell := ["pwsh.exe", "-NoLogo", "-c"]
 
 hostname := `hostname`
 rebuild_cmd := if os() == "macos" { "darwin-rebuild" } else { "nixos-rebuild" }
