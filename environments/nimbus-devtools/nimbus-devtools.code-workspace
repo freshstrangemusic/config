@@ -7,5 +7,16 @@
     {
       "path": "../../../../mozilla-extensions/nimbus-devtools",
     }
-  ]
+  ],
+  "settings": {
+    "peacock.remoteColor": "#832561",
+
+    "workbench.colorCustomizations": {
+      "commandCenter.border": "#e7e7e799",
+      "titleBar.activeBackground": "#832561",
+      "titleBar.activeForeground": "#e7e7e7",
+      "titleBar.inactiveBackground": "#83256199",
+      "titleBar.inactiveForeground": "#e7e7e799",
+    },
+  }
 }
