@@ -143,6 +143,10 @@ Function which {
             "Set-Alias $command $($commandInfo.Definition)"
         }
 
+        ([System.Management.Automation.CommandTypes]::ExternalScript) {
+            "$($commandInfo.Source)"
+        }
+
         ([System.Management.Automation.CommandTypes]::Function) {
             "Function $command"
         }
