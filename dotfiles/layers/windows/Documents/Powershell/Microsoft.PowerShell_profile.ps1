@@ -152,3 +152,5 @@ Function which {
         }
     }
 }
+
+Invoke-Expression -Command $(jj util completion power-shell | Out-String)
