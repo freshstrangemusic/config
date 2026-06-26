@@ -153,4 +153,4 @@ Function which {
     }
 }
 
-Invoke-Expression -Command $(jj util completion power-shell | Out-String)
+Invoke-Expression -Command $($env:COMPLETE = "powershell"; jj | Out-String; Remove-Item env:\COMPLETE)
