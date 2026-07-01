@@ -5,7 +5,11 @@ wip = ["l", "-r", "wip()"]
 heads = ["l", "-r", "wip_heads()"]
 descmany = ["describe", "--config", "templates.draft_commit_description='description'"]
 
+[revsets]
+bookmark-advance-to = 'closest_pushable(@)'
+
 [revset-aliases]
+"closest_pushable(to)" = 'heads(::to & mutable() & ~description(exact:"") & (~empty() | merges()))'
 "stack()" = "fork_point(mutable()::@)- | fork_point(mutable()::@)::"
 "wip()" = "mutable()- | mutable()::heads(mutable())"
 "wip_heads()" = "heads(mutable() & mine() & empty())- | heads(mutable() & mine() & ~empty())"
