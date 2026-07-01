@@ -1,0 +1,20 @@
+#!/usr/bin/env bash
+# Any copyright is dedicated to the Public Domain.
+# http://creativecommons.org/publicdomain/zero/1.0/
+
+set -eo pipefail
+
+OS=$1
+
+is_wsl() {
+    [[ -n "${WSL_DISTRO_NAME:-}" ]]
+}
+
+if is_wsl; then
+    stow -t ~ -d dotfiles/layers/wsl -D .
+elif [[ "$OS" = "macos" ]]; then
+    stow -t ~ -d dotfiles/layers/macOS -D .
+fi
+
+stow -t ~ -d dotfiles/layers/posix -D .
+stow -t ~ -d dotfiles/layers/base -D .

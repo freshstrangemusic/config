@@ -3,28 +3,16 @@ set windows-shell := ["pwsh.exe", "-NoLogo", "-c"]
 
 hostname := `hostname`
 rebuild_cmd := if os() == "macos" { "darwin-rebuild" } else { "nixos-rebuild" }
-is_wsl := "-n $WSL_DISTRO_NAME"
 op_cmd := if os_family() == "windows" { "op.exe" } else if x'${WSL_DISTRO_NAME:-}' != "" { "op.exe" } else { "op" }
 
 default:
     @just --list
 
 install-dotfiles:
-    if [[ -f ~/.config/fish/config.fish ]]; then rm -rf -- ~/.config/fish; fi
-    mkdir -p ~/.config/fish/functions
-    mkdir -p ~/.config/fish/conf.d
-    mkdir -p ~/.config/zellij
-    mkdir -p ~/.ssh/config.d
-    stow -t ~ -d dotfiles/layers/base .
-    stow -t ~ -d dotfiles/layers/posix .
-    if [[ "{{ os() }}" = "macos" ]]; then stow -t ~ -d dotfiles/layers/macOS .; fi
-    if [[ {{ is_wsl }} ]]; then stow -t ~ -d dotfiles/layers/wsl .; fi
+    ./bin/install-dotfiles {{ os() }}
 
 uninstall-dotfiles:
-    if [[ {{ is_wsl }} ]]; then stow -t ~ -d dotfiles/layers/wsl -D .; fi
-    if [[ "{{ os() }}" = "macos" ]]; then stow -t ~ -d dotfiles/layers/macOS -D .; fi
-    stow -t ~ -d dotfiles/layers/posix -D .
-    stow -t ~ -d dotfiles/layers/base -D .
+    ./bin/uninstall-dotfiles {{ os() }}
 
 rebuild:
     cd nix && sudo {{ rebuild_cmd }} switch --flake .#{{ hostname }}

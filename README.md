@@ -82,5 +82,12 @@ Scripts and utilities that are used from this repository and not installed globa
     /usr/bin/env bash -- -H HOSTNAME
   ```
 
+- **`install-dotfiles.ps1`**: used by `just install-dotfiles` to symlink dotfiles on Windows hosts.
+- **`install-dotfiles`**: used by `just install-dotfiles` to symlink dotfiles on POSIX hosts.
+- **`uninstall-dotfiles.ps1`**: used by `just uninstall-dotfiles` to remove symlinked dotfiles on
+  Windows hosts.
+- **`uninstall-dotfiles`**: used by `just uninstall-dotfiles` to remove symlinked dotfiles on POSIX
+  hosts.
+
 [just]: https://github.com/casey/just
 [stow]: https://www.gnu.org/software/stow/stow.html
