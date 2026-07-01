@@ -16,12 +16,14 @@ install-dotfiles:
     mkdir -p ~/.config/zellij
     mkdir -p ~/.ssh/config.d
     stow -t ~ -d dotfiles/layers/base .
+    stow -t ~ -d dotfiles/layers/posix .
     if [[ "{{ os() }}" = "macos" ]]; then stow -t ~ -d dotfiles/layers/macOS .; fi
     if [[ {{ is_wsl }} ]]; then stow -t ~ -d dotfiles/layers/wsl .; fi
 
 uninstall-dotfiles:
     if [[ {{ is_wsl }} ]]; then stow -t ~ -d dotfiles/layers/wsl -D .; fi
     if [[ "{{ os() }}" = "macos" ]]; then stow -t ~ -d dotfiles/layers/macOS -D .; fi
+    stow -t ~ -d dotfiles/layers/posix -D .
     stow -t ~ -d dotfiles/layers/base -D .
 
 rebuild:
