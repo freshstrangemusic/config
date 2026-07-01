@@ -6,8 +6,5 @@
 	indentHeuristic = true
 	compactionHeuristic = true
 
-[core]
-	excludesfile = ~/.gitignore-global
-
 [include]
 	path = ~/.gitconfig.local
