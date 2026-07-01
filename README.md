@@ -57,7 +57,7 @@ My nix configuration:
     [Read more](./nix/packages/rust-analyzer-wrapper/README.md).
 
 
-### `environments`
+### `environments/`
 
 Workspace configuration that cannot be committed to repositories for one reason
 or another (e.g., they are a work repository with no Nix buy-in from other
@@ -65,19 +65,22 @@ developers). These environments are packaged as combinations of VSCode
 Workspaces and nix shells.
 
 
-### `bootstrap.sh`
+### `bin/`
 
-A script to bootstrap the configuration of a nix environment on a new machine.
-To configure a new machine with the name `HOSTNAME`, run:
+Scripts and utilities that are used from this repository and not installed globally:
 
-```sh
-curl --proto '=https' \
-     --tlsv1.2 \
-     -sSf \
-     -L \
-     https://raw.githubusercontent.com/freshstrangemusic/config/main/bootstrap.sh | \
-  /bin/bash -- -H HOSTNAME
-```
+- **`bootstrap.sh`**: a script to bootstrap the configuration of a nix environment on a new machine.
+
+  To configure a new machine with the name `HOSTNAME`, run:
+
+  ```sh
+  curl --proto '=https' \
+       --tlsv1.2 \
+       -sSf \
+       -L \
+       https://raw.githubusercontent.com/freshstrangemusic/config/main/bin/bootstrap.sh | \
+    /bin/bash -- -H HOSTNAME
+  ```
 
 [just]: https://github.com/casey/just
 [stow]: https://www.gnu.org/software/stow/stow.html
