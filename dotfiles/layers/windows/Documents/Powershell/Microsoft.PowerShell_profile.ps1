@@ -153,6 +153,31 @@ Function which {
     }
 }
 
-Invoke-Expression -Command $($env:COMPLETE = "powershell"; jj | Out-String; Remove-Item env:\COMPLETE)
-Invoke-Expression -Command $(gh completion -s powershell | Out-String)
-Invoke-Expression -Command $(just --completions powershell | Out-String)
+Function Test-CommandExists {
+    param($command)
+
+    $prevErrorActionPreference = $ErrorActionPreference
+    $ErrorActionPreference = "Stop"
+
+    try {
+        if (Get-Command $command) {
+            return $true
+        }
+    } catch {
+        return $false
+    } finally {
+        $ErrorActionPreference = $prevErrorActionPreference
+    }
+}
+
+if (Test-CommandExists "jj") {
+    Invoke-Expression -Command $($env:COMPLETE = "powershell"; jj | Out-String; Remove-Item env:\COMPLETE)
+}
+
+if (Test-CommandExists "gh") {
+    Invoke-Expression -Command $(gh completion -s powershell | Out-String)
+}
+
+if (Test-CommandExists "just") {
+    Invoke-Expression -Command $(just --completions powershell | Out-String)
+}
