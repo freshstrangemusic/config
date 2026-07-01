@@ -5,6 +5,9 @@
     ".gitignore-global": "ignore",
     "flake.lock": "json",
   },
+  "json.schemaDownload.trustedDomains": {
+    "https://aka.ms/winget-settings.schema.json": true,
+  },
   "[just]": {
     "editor.tabSize": 4,
   },
