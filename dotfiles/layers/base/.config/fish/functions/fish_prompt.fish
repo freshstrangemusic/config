@@ -30,6 +30,17 @@ function fish_prompt --description 'Write out the prompt'
         set -g __fish_git_prompt_color_cleanstate green --bold
     end
 
+    if ! test  -z "$SSH_CLIENT"
+        set_color -o blue
+        echo -n $USER
+        set_color normal
+        echo -n @
+        set_color -o blue
+        echo -n (prompt_hostname)
+        set_color normal
+        echo -n :
+    end
+
     set -l color_cwd
     set -l suffix
     if functions -q fish_is_root_user; and fish_is_root_user
