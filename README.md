@@ -79,7 +79,7 @@ Scripts and utilities that are used from this repository and not installed globa
        -sSf \
        -L \
        https://raw.githubusercontent.com/freshstrangemusic/config/main/bin/bootstrap.sh | \
-    /bin/bash -- -H HOSTNAME
+    /usr/bin/env bash -- -H HOSTNAME
   ```
 
 [just]: https://github.com/casey/just
