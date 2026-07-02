@@ -27,6 +27,10 @@
       "mozconfig": "shellscript",
     },
 
+    "files.watcherExclude": {
+        "obj-*/**/*": true,
+    },
+
     "git.ignoreLimitWarning": true,
 
     "peacock.remoteColor": "#ff3d00",
