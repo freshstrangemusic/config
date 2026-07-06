@@ -1,3 +1,7 @@
+[user]
+name = "Beth Rennie"
+email = "beth@brennie.ca"
+
 [aliases]
 l = ["log", "--reversed"]
 s = ["l", "-r", "stack()"]
@@ -20,10 +24,6 @@ default-command = ["s"]
 diff-editor = ":builtin"
 diff-formatter = ":git"
 conflict-marker-style = "git"
-
-[user]
-name = "Beth Rennie"
-email = "beth@brennie.ca"
 
 [templates]
 draft_commit_description = '''
