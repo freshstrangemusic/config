@@ -31,13 +31,23 @@
     shell = pkgs.fish;
   };
 
+  environment.etc."ssh/authorized_keys.d/beth" = {
+    text = ''
+      ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIKZeV/on0OSe3hAyDKsPzQ1fblhlH47MhxiEN0zfgWzI
+    '';
+    mode = "0644";
+  };
   environment.systemPackages = with pkgs; [
     docker
+    pam_rssh
   ];
 
   programs._1password.enable = true;
   programs.fish.enable = true;
   programs.nix-ld.enable = true;
+
+  security.pam.rssh.enable = true;
+  security.pam.services.sudo.rssh = true;
 
   services.envfs.enable = true;
   services.openssh.enable = true;
