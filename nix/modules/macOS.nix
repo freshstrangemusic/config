@@ -18,6 +18,9 @@
     })
   ];
 
+  # TODO: https://github.com/nix-darwin/nix-darwin/issues/1817
+  documentation.enable = false;
+
   environment.systemPackages = with pkgs; [
     # programs._1password.enable does not add this package on macOS
     _1password-cli
