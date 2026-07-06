@@ -181,3 +181,7 @@ if (Test-CommandExists "gh") {
 if (Test-CommandExists "just") {
     Invoke-Expression -Command $(just --completions powershell | Out-String)
 }
+
+if (Test-CommandExists "proj") {
+    Invoke-Expression -Command $(proj completions powershell | Out-String)
+}
