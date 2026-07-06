@@ -1,5 +1,6 @@
 $env:EDITOR = "nvim"
 $env:LESS = "FRX"
+$env:LESSHISTFILE = "-"
 
 # mach commands tend to be faster and not cause divergence when using git
 # compared to jj.
