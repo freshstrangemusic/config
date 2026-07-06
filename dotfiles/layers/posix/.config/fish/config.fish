@@ -1,4 +1,5 @@
 set -gx LESS FRX
+set -gx CARGO_INSTALL_ROOT ~/.local
 
 fish_add_path ~/.local/bin
 
