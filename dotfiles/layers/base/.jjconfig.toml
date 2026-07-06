@@ -14,16 +14,28 @@ descmany = ["describe", "--config", "templates.draft_commit_description='descrip
 bookmark-advance-to = 'closest_pushable(@)'
 
 [revset-aliases]
-"closest_pushable(to)" = 'heads(::to & mutable() & ~description(exact:"") & (~empty() | merges()))'
+"closest_pushable(to)" = '''
+heads(
+  ::to &
+  mutable() &
+  ~description(exact:"") &
+  (~empty() | merges()) &
+  ~private()
+)
+'''
 "stack()" = "fork_point(mutable()::@)- | fork_point(mutable()::@)::"
 "wip()" = "mutable()- | mutable()::heads(mutable())"
 "wip_heads()" = "heads(mutable() & mine() & empty())- | heads(mutable() & mine() & ~empty())"
+"private()" = 'description("\\[DO NOT PUSH\\]*")'
 
 [ui]
 default-command = ["s"]
 diff-editor = ":builtin"
 diff-formatter = ":git"
 conflict-marker-style = "git"
+
+[git]
+private-commits = "private()"
 
 [templates]
 draft_commit_description = '''
