@@ -6,4 +6,5 @@ alias ls eza
 
 any-nix-shell fish --info-right | source
 COMPLETE=fish jj | source
+proj completions fish | source
 
