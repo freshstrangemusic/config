@@ -37,6 +37,8 @@
 
   programs._1password.enable = true;
 
+  security.pam.services.sudo_local.touchIdAuth = true;
+
   # Replace the default /Applications/Nix Apps symlink with a directory
   # containing copies of the installed apps.
   #
