@@ -54,4 +54,6 @@
 
     find "${config.system.build.applications}/Applications" -maxdepth 1 -type l -exec cp -Lr {} "/Applications/Nix Apps" \;
   '');
+
+  system.tools.darwin-uninstaller.enable = false;
 }
