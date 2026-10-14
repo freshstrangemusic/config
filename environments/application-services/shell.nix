@@ -20,6 +20,7 @@ pkgs.mkShell {
       rustfmt
 
       pkg-config
+      python314Packages.pip
       python314Packages.gyp
       python314Packages.ninja
       zlib
@@ -32,5 +33,6 @@ pkgs.mkShell {
   shellHook = ''
     export ANDROID_HOME="${androidPlatform.androidsdk}/libexec/android-sdk"
     export ANDROID_NDK_ROOT="${androidPlatform.androidsdk}/ndk-bundle"
+    export GLEAN_PYTHON_VENV_DIR="/home/beth/Workspace/src/github.com/freshstrangemusic/config/environments/application-services/venv"
   '';
 }
