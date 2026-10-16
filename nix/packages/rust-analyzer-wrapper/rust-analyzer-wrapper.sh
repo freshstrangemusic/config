@@ -1,6 +1,11 @@
 RUST_ANALYZER_WRAPPER_NIX_FLAKE_PATH="${RUST_ANALYZER_WRAPPER_NIX_FLAKE_PATH:-.}"
 RUST_ANALYZER_WRAPPER_NIX_SHELL_PATH="${RUST_ANALYZER_WRAPPER_NIX_SHELL_PATH:-.}"
 
+if (( $# == 1 )) && [[ $1 == "--version" ]]; then
+  echo "rust-analyzer-wrapper"
+  exit 0
+fi
+
 if [[ -e "${RUST_ANALYZER_WRAPPER_NIX_FLAKE_PATH}/flake.nix" ]]; then
   exec nix develop "${RUST_ANALYZER_WRAPPER_NIX_FLAKE_PATH}" --command rust-analyzer "$@"
 elif [[ -e "${RUST_ANALYZER_WRAPPER_NIX_SHELL_PATH}/shell.nix" ]]; then
