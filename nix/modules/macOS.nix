@@ -25,6 +25,7 @@
     # programs._1password.enable does not add this package on macOS
     _1password-cli
     coreutils
+    neovide
   ];
 
   launchd.user.agents.macOSUpdateNotify = {
