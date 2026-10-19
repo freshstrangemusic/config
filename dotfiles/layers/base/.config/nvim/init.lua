@@ -26,3 +26,5 @@ vim.o.undofile = true -- Enable undo across sessions.
 vim.o.wildmenu = true -- Enable tab-based autocompletion for commands.
 vim.o.wrap = false -- Do not wrap text.
 
+require("config.bootstrap")
+require("lazy")
