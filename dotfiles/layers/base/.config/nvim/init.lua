@@ -26,5 +26,9 @@ vim.o.undofile = true -- Enable undo across sessions.
 vim.o.wildmenu = true -- Enable tab-based autocompletion for commands.
 vim.o.wrap = false -- Do not wrap text.
 
+
+-- Load lua modules relative to init.lua
+package.path = package.path .. ";" .. vim.fn.stdpath("config") .. "/?.lua;"
+
 require("config.bootstrap")
 require("lazy")
