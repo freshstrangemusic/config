@@ -5,7 +5,7 @@ if vim.g.neovide then
     vim.g.neovide_scroll_animation_length = 0
 
     -- Use 14pt Fira Code as the font.
-    vim.opt.guifont = "Fira Code:h14"
+    vim.opt.guifont = "FiraCode Nerd Font:h14"
 end
 
 -- This needs to be set before including any plugins that define keymappings that reference the
