@@ -36,6 +36,7 @@ require("config.bootstrap")
 require("lazy").setup("plugins")
 
 vim.lsp.enable("rust_analyzer")
+vim.lsp.enable("stylua")
 
 -- Enable inlay hints.
 vim.lsp.inlay_hint.enable(true)
@@ -47,12 +48,9 @@ vim.keymap.set("n", "gh", vim.lsp.buf.hover)
 vim.keymap.set("n", "gf", vim.lsp.buf.format)
 
 -- Autoformat files with the LSP when saving.
-vim.api.nvim_create_autocmd(
-    { "BufWritePre" },
-    {
-        pattern = {"*.rs"},
-        callback = function() 
-            vim.lsp.buf.format()
-        end,
-    }
-)
+vim.api.nvim_create_autocmd({ "BufWritePre" }, {
+    pattern = { "*.lua", "*.rs" },
+    callback = function()
+        vim.lsp.buf.format()
+    end,
+})
