@@ -46,7 +46,7 @@
     patisserie
     pipx
     poetry
-    python313
+    python314
     ripgrep
     rust-analyzer-wrapper
     rustup
