@@ -25,4 +25,4 @@ vim.o.wrap = false -- Do not wrap text.
 
 
 require("config.bootstrap")
-require("lazy")
+require("lazy").setup("plugins")
