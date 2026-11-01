@@ -26,6 +26,17 @@ return {
         },
     },
     {
+        "simnalamburt/vim-mundo",
+        cmd = "MundoToggle",
+        init = function()
+            -- Open mundo pane to the right.
+            vim.g.mundo_right = 1
+        end,
+        keys = {
+            { "<leader>u", "<cmd>MundoToggle<CR>" },
+        },
+    },
+    {
         "stevearc/oil.nvim",
         lazy = false,
         ---@type oil.SetupOpts
