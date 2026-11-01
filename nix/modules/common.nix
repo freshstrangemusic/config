@@ -41,7 +41,9 @@
     just-lsp
     nixd
     nixfmt
-    neovim
+    (neovim.override {
+      withPython3 = true;
+    })
     nodejs_24
     patisserie
     pipx
