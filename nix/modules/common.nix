@@ -53,6 +53,7 @@
     rust-analyzer-wrapper
     rustup
     stow
+    stylua
     uv
     wget
     zellij
