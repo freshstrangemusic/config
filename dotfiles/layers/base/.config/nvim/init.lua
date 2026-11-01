@@ -2,6 +2,9 @@ if vim.g.neovide then
     vim.g.neovide_position_animation_length = 0
     vim.g.neovide_cursor_animation_length = 0
     vim.g.neovide_scroll_animation_length = 0
+
+    -- Use 14pt Fira Code as the font.
+    vim.opt.guifont = "Fira Code:h14"
 end
 
 -- This needs to be set before including any plugins that define keymappings that reference the
