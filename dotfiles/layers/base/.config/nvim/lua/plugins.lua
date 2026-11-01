@@ -24,6 +24,7 @@ return {
         version = "v0.2.2",
         dependencies = {
             "nvim-lua/plenary.nvim",
+            "nvim-tree/nvim-web-devicons",
         },
         cmd = "Telescope",
         keys = {
@@ -46,6 +47,9 @@ return {
     },
     {
         "stevearc/oil.nvim",
+        dependencies = {
+            "nvim-tree/nvim-web-devicons",
+        },
         lazy = false,
         ---@type oil.SetupOpts
         opts = {
