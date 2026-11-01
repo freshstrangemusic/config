@@ -25,5 +25,13 @@ return {
             "nvim-lua/plenary.nvim",
         },
     },
+    {
+        "stevearc/oil.nvim",
+        lazy = false,
+        ---@type oil.SetupOpts
+        opts = {
+            default_file_explorer = true,
+        },
+    },
     "tpope/vim-sleuth",
 }
