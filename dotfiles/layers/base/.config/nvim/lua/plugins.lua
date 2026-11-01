@@ -30,7 +30,15 @@ return {
         keys = {
             {
                 "<Leader>ff",
-                "<CMD>:Telescope find_files find_command=rg,--files,--hidden,--ignore,--iglob=!.git/<CR>",
+                "<CMD>Telescope find_files find_command=rg,--files,--hidden,--ignore,--iglob=!.git/<CR>",
+            },
+            {
+                "<Leader>fg",
+                "<CMD>Telescope live_grep find_command=rg,--hidden,--ignore,--iglob=!.git/<CR>",
+            },
+            {
+                "<Leader>fb",
+                "<CMD>Telescope buffers<CR>",
             },
         },
     },
