@@ -37,5 +37,5 @@ fmt-nix:
 
 [private]
 fmt-lua:
-    rg --files -g '*.lua' --hidden --ignore | xargs stylua
+    rg --files -g '*.lua' --hidden --ignore --path-separator / | xargs stylua
 
