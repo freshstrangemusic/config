@@ -32,6 +32,7 @@
     delta
     direnv
     eza
+    fastmod
     fish
     flake-updated
     git
@@ -55,6 +56,7 @@
     stow
     stylua
     uv
+    watchman
     wget
     zellij
   ];

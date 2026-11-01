@@ -37,6 +37,7 @@
           specialArgs = { inherit checkoutPath inputs system; };
           modules = [
             ./modules/common.nix
+            ./modules/gui.nix
             ./modules/macOS.nix
             ./hosts/vixen/configuration.nix
           ];
@@ -51,6 +52,7 @@
           specialArgs = { inherit checkoutPath inputs system; };
           modules = [
             ./modules/common.nix
+            ./modules/gui.nix
             ./modules/macOS.nix
             ./hosts/kitsune/configuration.nix
           ];

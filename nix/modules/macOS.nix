@@ -22,7 +22,8 @@
     # programs._1password.enable does not add this package on macOS
     _1password-cli
     coreutils
-    neovide
+    gnused
+    vlc-bin
   ];
 
   launchd.user.agents.macOSUpdateNotify = {
@@ -33,7 +34,8 @@
     };
   };
 
-  programs._1password.enable = true;
+  programs.fish.enable = true;
+  programs.zsh.enable = true;
 
   security.pam.services.sudo_local.touchIdAuth = true;
 
