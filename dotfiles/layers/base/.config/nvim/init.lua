@@ -35,9 +35,3 @@ vim.opt.wrap = false -- Do not wrap text.
 require("config.bootstrap")
 require("lazy").setup("plugins")
 
-vim.keymap.set(
-    "n",
-    "<Leader>ff",
-    ":Telescope find_files find_command=rg,--files,--hidden,--ignore,--iglob=!.git/ <CR>"
-)
-

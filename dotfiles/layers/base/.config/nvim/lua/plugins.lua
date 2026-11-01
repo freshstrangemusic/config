@@ -24,6 +24,13 @@ return {
         dependencies = {
             "nvim-lua/plenary.nvim",
         },
+        cmd = "Telescope",
+        keys = {
+            {
+                "<Leader>ff",
+                "<CMD>:Telescope find_files find_command=rg,--files,--hidden,--ignore,--iglob=!.git/<CR>",
+            },
+        },
     },
     {
         "simnalamburt/vim-mundo",
