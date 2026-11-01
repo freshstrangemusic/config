@@ -22,6 +22,8 @@ vim.opt.textwidth = 100 -- Prefer longer lines.
 vim.opt.undofile = true -- Enable undo across sessions.
 vim.opt.wildmenu = true -- Enable tab-based autocompletion for commands.
 vim.opt.wrap = false -- Do not wrap text.
+vim.opt.listchars:append("space:·") -- Display space as a middle dot.
+vim.opt.list = true -- Enable list mode to display whitespace characters.
 
 
 require("config.bootstrap")
