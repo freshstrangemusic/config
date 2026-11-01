@@ -11,10 +11,10 @@ is_wsl() {
 }
 
 if is_wsl; then
-    stow -t ~ -d dotfiles/layers/wsl -D .
+    stow --no-folding -t ~ -d dotfiles/layers/wsl -D .
 elif [[ "$OS" = "macos" ]]; then
-    stow -t ~ -d dotfiles/layers/macOS -D .
+    stow --no-folding -t ~ -d dotfiles/layers/macOS -D .
 fi
 
-stow -t ~ -d dotfiles/layers/posix -D .
-stow -t ~ -d dotfiles/layers/base -D .
+stow --no-folding -t ~ -d dotfiles/layers/posix -D .
+stow --no-folding -t ~ -d dotfiles/layers/base -D .
