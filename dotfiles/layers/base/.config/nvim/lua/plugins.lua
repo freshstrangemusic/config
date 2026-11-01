@@ -18,6 +18,7 @@ return {
             vim.cmd([[colorscheme tokyonight-storm]])
         end,
     },
+    "HiPhish/rainbow-delimiters.nvim",
     "neovim/nvim-lspconfig",
     {
         "nvim-lualine/lualine.nvim",
