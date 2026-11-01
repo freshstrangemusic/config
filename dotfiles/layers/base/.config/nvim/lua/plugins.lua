@@ -18,6 +18,7 @@ return {
             vim.cmd([[colorscheme tokyonight-storm]])
         end,
     },
+    "neovim/nvim-lspconfig",
     {
         "nvim-telescope/telescope.nvim",
         version = "v0.2.2",
