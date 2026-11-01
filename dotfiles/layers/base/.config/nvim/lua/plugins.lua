@@ -20,6 +20,19 @@ return {
     },
     "neovim/nvim-lspconfig",
     {
+        "nvim-lualine/lualine.nvim",
+        dependencies = {
+            "nvim-tree/nvim-web-devicons",
+        },
+        opts = {
+            icons_enabled = true,
+            sections = {
+                -- Disable the branch section. I use jj so git HEAD is always detached.
+                lualine_b = { "diff", "diagnostics" },
+            },
+        },
+    },
+    {
         "nvim-telescope/telescope.nvim",
         version = "v0.2.2",
         dependencies = {
