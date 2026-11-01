@@ -1,5 +1,16 @@
 return {
     {
+        "folke/snacks.nvim",
+        ---@type snacks.Config
+        opts = {
+            indent = {
+                animate = {
+                    enabled = false,
+                },
+            },
+        },
+    },
+    {
         "folke/tokyonight.nvim",
         lazy = false,
         priorty = 1000,
