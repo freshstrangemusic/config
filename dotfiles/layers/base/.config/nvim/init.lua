@@ -13,6 +13,10 @@ vim.opt.backup = false -- Do not generate backups automatically.
 vim.opt.cursorline = true -- Highlight the currently edited line.
 vim.opt.fileformat = "unix" -- Always use CRLF line endings.
 vim.opt.joinspaces = false -- Do not insert two spaces after punctuation when joining lines.
+vim.opt.list = true -- Enable list mode to display whitespace characters and scroll positions.
+-- Display space as a middle dot.
+ -- Use </> for the last characters before scrolling.
+vim.opt.listchars:append("space:·,extends:>,precedes:<")
 vim.opt.number = true -- Enable line numbers.
 vim.opt.relativenumber = true -- Use relative line numbers.
 vim.opt.ruler = true -- Show position in line and file.
@@ -23,9 +27,6 @@ vim.opt.textwidth = 100 -- Prefer longer lines.
 vim.opt.undofile = true -- Enable undo across sessions.
 vim.opt.wildmenu = true -- Enable tab-based autocompletion for commands.
 vim.opt.wrap = false -- Do not wrap text.
-vim.opt.listchars:append("space:·") -- Display space as a middle dot.
-vim.opt.list = true -- Enable list mode to display whitespace characters.
-
 
 require("config.bootstrap")
 require("lazy").setup("plugins")
