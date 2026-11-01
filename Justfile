@@ -26,3 +26,4 @@ nix-flake-update:
 
 fmt:
     rg --files -g '*.nix' . | xargs nixfmt
+    rg --files -g '*.lua' --hidden --ignore | xargs stylua
