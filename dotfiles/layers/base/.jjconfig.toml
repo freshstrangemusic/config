@@ -9,6 +9,7 @@ wip = ["l", "-r", "wip()"]
 heads = ["l", "-r", "wip_heads()"]
 all = ["log", "-r", "all()"]
 descmany = ["describe", "--config", "templates.draft_commit_description='description'"]
+ba = ["bookmark", "advance"]
 
 [revsets]
 bookmark-advance-to = 'closest_pushable(@)'
