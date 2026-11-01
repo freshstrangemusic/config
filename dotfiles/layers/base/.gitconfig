@@ -8,3 +8,7 @@
 
 [include]
 	path = ~/.gitconfig.local
+
+[core]
+	autocrlf = false
+
