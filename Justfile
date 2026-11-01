@@ -24,6 +24,18 @@ edit-host-configuration:
 nix-flake-update:
     cd nix && eval $({{ op_cmd }} signin) && env NIX_CONFIG="access-tokens = github.com=`{{ op_cmd }} item get gh-token-nix --fields password --reveal`" nix flake update
 
-fmt:
+fmt: fmt-nix fmt-lua
+
+[private]
+[unix]
+fmt-nix:
     rg --files -g '*.nix' . | xargs nixfmt
+
+[private]
+[windows]
+fmt-nix:
+
+[private]
+fmt-lua:
     rg --files -g '*.lua' --hidden --ignore | xargs stylua
+
