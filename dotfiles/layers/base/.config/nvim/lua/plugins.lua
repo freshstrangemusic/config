@@ -16,7 +16,7 @@ return {
         priorty = 1000,
         config = function()
             vim.cmd([[colorscheme tokyonight-storm]])
-        end
+        end,
     },
     {
         "nvim-telescope/telescope.nvim",
