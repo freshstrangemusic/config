@@ -18,5 +18,12 @@ return {
             vim.cmd([[colorscheme tokyonight-storm]])
         end
     },
+    {
+        "nvim-telescope/telescope.nvim",
+        version = "v0.2.2",
+        dependencies = {
+            "nvim-lua/plenary.nvim",
+        },
+    },
     "tpope/vim-sleuth",
 }
