@@ -57,6 +57,11 @@ return {
         },
     },
     {
+        "nvim-treesitter/nvim-treesitter",
+        lazy = false,
+        build = ":TSUpdate",
+    },
+    {
         "simnalamburt/vim-mundo",
         cmd = "MundoToggle",
         init = function()
