@@ -55,6 +55,7 @@
     rustup
     stow
     stylua
+    tree-sitter
     uv
     watchman
     wget
