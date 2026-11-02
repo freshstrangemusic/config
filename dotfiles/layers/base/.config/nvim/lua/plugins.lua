@@ -51,6 +51,10 @@ return {
                 "<CMD>Telescope live_grep find_command=rg,--hidden,--ignore,--iglob=!.git/<CR>",
             },
             {
+                "<Leader>fo",
+                "<CMD>Telescope oldfiles cwd_only=v:true<CR>",
+            },
+            {
                 "<Leader>fb",
                 "<CMD>Telescope buffers<CR>",
             },
