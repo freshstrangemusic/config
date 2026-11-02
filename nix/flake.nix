@@ -2,7 +2,7 @@
   description = "system configuration flakes";
 
   inputs = {
-    nixpkgs.url = "github:NixOS/nixpkgs/nixpkgs-unstable";
+    nixpkgs.url = "https://flakehub.com/f/DeterminateSystems/nixpkgs-weekly/0.1";
 
     nix-darwin = {
       url = "github:nix-darwin/nix-darwin";
