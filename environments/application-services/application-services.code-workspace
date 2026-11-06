@@ -31,6 +31,8 @@
       "RUST_ANALYZER_WRAPPER_NIX_SHELL_PATH": ".",
       "NIXPKGS_ALLOW_UNFREE": "1",
       "NIXPKGS_ACCEPT_ANDROID_SDK_LICENSE": "1",
+      "NSS_STATIC": "1",
+      "NSS_DIR": "/home/beth/Workspace/src/github.com/mozilla/application-services/libs/desktop/linux-x86-64/nss",
     }
   }
 }
