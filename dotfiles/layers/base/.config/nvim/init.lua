@@ -18,9 +18,8 @@ vim.opt.cursorline = true -- Highlight the currently edited line.
 vim.opt.fileformat = "unix" -- Always use CRLF line endings.
 vim.opt.joinspaces = false -- Do not insert two spaces after punctuation when joining lines.
 vim.opt.list = true -- Enable list mode to display whitespace characters and scroll positions.
--- Display space as a middle dot.
 -- Use </> for the last characters before scrolling.
-vim.opt.listchars:append("space:·,extends:>,precedes:<")
+vim.opt.listchars:append("extends:>,precedes:<")
 vim.opt.number = true -- Enable line numbers.
 vim.opt.relativenumber = true -- Use relative line numbers.
 vim.opt.ruler = true -- Show position in line and file.
