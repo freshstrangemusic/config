@@ -10,6 +10,7 @@ heads = ["l", "-r", "wip_heads()"]
 all = ["log", "-r", "all()"]
 descmany = ["describe", "--config", "templates.draft_commit_description='description'"]
 ba = ["bookmark", "advance"]
+push-stack = ["git", "push", "-c", "to_push()"]
 
 [revsets]
 bookmark-advance-to = 'closest_pushable(@)'
@@ -28,6 +29,7 @@ heads(
 "wip()" = "mutable()- | mutable()::heads(mutable())"
 "wip_heads()" = "heads(mutable() & mine() & empty())- | heads(mutable() & mine() & ~empty())"
 "private()" = 'description("\\[DO NOT PUSH\\]*")'
+"to_push()" = "fork_point(mutable()::@)::closest_pushable(@)"
 
 [ui]
 default-command = ["s"]
