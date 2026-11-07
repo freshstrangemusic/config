@@ -93,6 +93,12 @@ return {
         build = ":TSUpdate",
     },
     {
+        "qpkorr/vim-bufkill",
+        keys = {
+            { "<leader>q", "<cmd>:silent! BW<CR>" },
+        },
+    },
+    {
         "simnalamburt/vim-mundo",
         cmd = "MundoToggle",
         init = function()
