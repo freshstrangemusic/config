@@ -46,11 +46,3 @@ vim.keymap.set("n", "gh", vim.lsp.buf.hover)
 
 -- gf to format the buffer
 vim.keymap.set("n", "gf", vim.lsp.buf.format)
-
--- Autoformat files with the LSP when saving.
-vim.api.nvim_create_autocmd({ "BufWritePre" }, {
-    pattern = { "*.lua", "*.nix", "*.rs" },
-    callback = function()
-        vim.lsp.buf.format()
-    end,
-})
