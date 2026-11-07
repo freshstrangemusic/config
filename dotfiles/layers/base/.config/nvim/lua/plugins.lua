@@ -61,6 +61,33 @@ return {
         },
     },
     {
+        "nvim-neo-tree/neo-tree.nvim",
+        branch = "v3.x",
+        dependencies = {
+            "nvim-lua/plenary.nvim",
+            "MunifTanjim/nui.nvim",
+            "nvim-tree/nvim-web-devicons",
+        },
+        lazy = false,
+        opts = {
+            filesystem = {
+                filtered_items = {
+                    never_show = {
+                        ".git",
+                        ".jj",
+                    },
+                },
+                follow_current_file = {
+                    enabled = true,
+                },
+            },
+        },
+        keys = {
+            { "<leader>e", "<cmd>Neotree reveal<CR>" },
+            { "<leader>b", "<cmd>Neotree buffers<CR>" },
+        },
+    },
+    {
         "nvim-treesitter/nvim-treesitter",
         lazy = false,
         build = ":TSUpdate",
