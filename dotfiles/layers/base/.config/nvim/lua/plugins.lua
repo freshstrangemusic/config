@@ -83,8 +83,8 @@ return {
             },
         },
         keys = {
-            { "<leader>e", "<cmd>Neotree reveal<CR>" },
-            { "<leader>b", "<cmd>Neotree buffers<CR>" },
+            { "<leader>e", "<cmd>Neotree reveal toggle<CR>" },
+            { "<leader>b", "<cmd>Neotree buffers toggle<CR>" },
         },
     },
     {
