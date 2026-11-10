@@ -29,7 +29,8 @@ heads(
 "wip()" = "mutable()- | mutable()::heads(mutable())"
 "wip_heads()" = "heads(mutable() & mine() & empty())- | heads(mutable() & mine() & ~empty())"
 "private()" = 'description("\\[DO NOT PUSH\\]*")'
-"to_push()" = "fork_point(mutable()::@)::closest_pushable(@)"
+"tip()" = 'exactly(heads(stack() ~ empty() ~ description(exact:"")), 1)'
+"to_push()" = "fork_point(mutable()::@)::closest_pushable(tip())"
 
 [ui]
 default-command = ["s"]
