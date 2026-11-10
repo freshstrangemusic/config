@@ -1,6 +1,3 @@
 function patisserie --description "Use patisserie to paste to pastery.net"
-  set _PATISSERIE (which patisserie)
-  set -x PASTERY_API_KEY (op item get pastery-api-key --fields credential --reveal)
-
-  $_PATISSERIE $argv
+  env PASTERY_API_KEY="op://private/pastery-api-key/credential" op run (which patisserie) -- $argv
 end
