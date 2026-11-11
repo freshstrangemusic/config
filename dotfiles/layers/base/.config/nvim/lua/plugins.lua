@@ -122,10 +122,10 @@ return {
                 ["H"] = { "actions.toggle_hidden", mode = "n" },
             },
             view_options = {
-                is_always_hidden = function(name, _bufnr) 
+                is_always_hidden = function(name, _bufnr)
                     -- Never show .git/ or .jj/ directories
-                    return name == ".git" || name == ".jj"
-                end
+                    return name == ".git" or name == ".jj"
+                end,
             },
         },
     },
