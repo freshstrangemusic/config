@@ -118,6 +118,9 @@ return {
         ---@type oil.SetupOpts
         opts = {
             default_file_explorer = true,
+            keymaps = {
+                ["H"] = { "actions.toggle_hidden", mode = "n" },
+            },
         },
     },
     "tpope/vim-sleuth",
