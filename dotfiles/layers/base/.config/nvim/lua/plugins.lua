@@ -121,6 +121,12 @@ return {
             keymaps = {
                 ["H"] = { "actions.toggle_hidden", mode = "n" },
             },
+            view_options = {
+                is_always_hidden = function(name, _bufnr) 
+                    -- Never show .git/ or .jj/ directories
+                    return name == ".git" || name == ".jj"
+                end
+            },
         },
     },
     "tpope/vim-sleuth",
