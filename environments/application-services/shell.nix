@@ -5,7 +5,7 @@ let
   androidPlatform = pkgs.androidenv.composeAndroidPackages {
     includeNDK = true;
     platformVersions = [ "36.1" ];
-    buildToolsVersions = [ "35.0.0" ];
+    buildToolsVersions = [ "36.0.0" ];
   };
 in
 pkgs.mkShell {
@@ -25,14 +25,14 @@ pkgs.mkShell {
       python314Packages.ninja
       zlib
 
-      openjdk17
+      openjdk25
       kotlin
     ]
     ++ [ androidPlatform.androidsdk ];
 
   shellHook = ''
     export ANDROID_HOME="${androidPlatform.androidsdk}/libexec/android-sdk"
-    export ANDROID_NDK_ROOT="${androidPlatform.androidsdk}/ndk-bundle"
+    export ANDROID_NDK_ROOT="${androidPlatform.androidsdk}/libexec/android-sdk/ndk-bundle"
     export GLEAN_PYTHON_VENV_DIR="/home/beth/Workspace/src/github.com/freshstrangemusic/config/environments/application-services/venv"
   '';
 }
