@@ -34,5 +34,7 @@ pkgs.mkShell {
     export ANDROID_HOME="${androidPlatform.androidsdk}/libexec/android-sdk"
     export ANDROID_NDK_ROOT="${androidPlatform.androidsdk}/libexec/android-sdk/ndk-bundle"
     export GLEAN_PYTHON_VENV_DIR="/home/beth/Workspace/src/github.com/freshstrangemusic/config/environments/application-services/venv"
+    export NSS_DIR="/home/beth/Workspace/src/github.com/mozilla/application-services/libs/desktop/linux-x86-64/nss"
+    export NSS_STATIC=1
   '';
 }
