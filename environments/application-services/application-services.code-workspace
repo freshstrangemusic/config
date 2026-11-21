@@ -34,5 +34,26 @@
       "NSS_STATIC": "1",
       "NSS_DIR": "/home/beth/Workspace/src/github.com/mozilla/application-services/libs/desktop/linux-x86-64/nss",
     }
+  },
+  "tasks": {
+    "version": "2.0.0",
+    "tasks": [
+      {
+        "label": "Rebuild NSS",
+        "group": "build",
+        "type": "shell",
+        "command": "${workspaceFolder:[environment]}/bin/rebuild-nss.sh",
+        "options": {
+          "cwd": "${workspaceFolder:application-services}",
+          "shell": {
+            "executable": "nix-shell",
+            "args": [
+              "${workspaceFolder:[environment]}/shell.nix",
+              "--command",
+            ]
+          }
+        }
+      }
+    ]
   }
 }
