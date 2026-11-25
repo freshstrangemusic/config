@@ -4,8 +4,8 @@
 let
   androidPlatform = pkgs.androidenv.composeAndroidPackages {
     includeNDK = true;
-    platformVersions = [ "36.1" ];
-    buildToolsVersions = [ "36.0.0" ];
+    platformVersions = [ "37.2" ];
+    buildToolsVersions = [ "37.0.0" ];
   };
 in
 pkgs.mkShell {
