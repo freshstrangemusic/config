@@ -11,12 +11,13 @@
   ],
   "settings": {
     "terminal.integrated.cwd": "${workspaceFolder:application-services}",
-    "terminal.integrated.defaultProfile.linux": "fish [nix-shell]",
+    "terminal.integrated.defaultProfile.linux": "fish [nix develop]",
     "terminal.integrated.profiles.linux": {
-      "fish [nix-shell]": {
-        "path": "nix-shell",
+      "fish [nix develop]": {
+        "path": "nix",
         "args": [
-          "${workspaceFolder:[environment]}/shell.nix",
+          "develop",
+          "${workspaceFolder:[environment]}",
           "--command",
           "fish"
         ],
@@ -28,7 +29,7 @@
     },
     "rust-analyzer.server.path": "rust-analyzer-wrapper",
     "rust-analyzer.server.extraEnv": {
-      "RUST_ANALYZER_WRAPPER_NIX_SHELL_PATH": ".",
+      "RUST_ANALYZER_WRAPPER_NIX_FLAKE_PATH": ".",
       "NIXPKGS_ALLOW_UNFREE": "1",
       "NIXPKGS_ACCEPT_ANDROID_SDK_LICENSE": "1",
       "NSS_STATIC": "1",
@@ -46,10 +47,9 @@
         "options": {
           "cwd": "${workspaceFolder:application-services}",
           "shell": {
-            "executable": "nix-shell",
+            "executable": "nix develop",
             "args": [
-              "${workspaceFolder:[environment]}/shell.nix",
-              "--command",
+              "${workspaceFolder:[environment]}",
             ]
           }
         }
