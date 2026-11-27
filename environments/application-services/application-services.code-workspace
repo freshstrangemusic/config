@@ -12,6 +12,7 @@
   "settings": {
     "terminal.integrated.cwd": "${workspaceFolder:application-services}",
     "terminal.integrated.defaultProfile.linux": "fish [nix develop]",
+    "terminal.integrated.defaultProfile.osx": "fish [nix develop]",
     "terminal.integrated.profiles.linux": {
       "fish [nix develop]": {
         "path": "nix",
@@ -21,19 +22,22 @@
           "--command",
           "fish"
         ],
-        "env": {
-          "NIXPKGS_ALLOW_UNFREE": "1",
-          "NIXPKGS_ACCEPT_ANDROID_SDK_LICENSE": "1",
-        },
+      }
+    },
+    "terminal.integrated.profiles.osx": {
+      "fish [nix develop]": {
+        "path": "nix",
+        "args": [
+          "develop",
+          "${workspaceFolder:[environment]}",
+          "--command",
+          "fish"
+        ],
       }
     },
     "rust-analyzer.server.path": "rust-analyzer-wrapper",
     "rust-analyzer.server.extraEnv": {
       "RUST_ANALYZER_WRAPPER_NIX_FLAKE_PATH": ".",
-      "NIXPKGS_ALLOW_UNFREE": "1",
-      "NIXPKGS_ACCEPT_ANDROID_SDK_LICENSE": "1",
-      "NSS_STATIC": "1",
-      "NSS_DIR": "/home/beth/Workspace/src/github.com/mozilla/application-services/libs/desktop/linux-x86-64/nss",
     }
   },
   "tasks": {
