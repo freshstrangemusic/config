@@ -34,7 +34,7 @@
         { pkgs, system }:
         let
           toolchain = (
-            pkgs.rust-bin.stable."1.95.0".default.override {
+            pkgs.rust-bin.stable."1.94.0".default.override {
               extensions = [ "rust-src" ];
             }
           );
